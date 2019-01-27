@@ -1,0 +1,319 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Lab1</title><meta name="generator" content="MATLAB 9.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2019-01-14"><meta name="DC.source" content="Lab1.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#1">ME 422 Lab 1</a></li><li><a href="#2">Exercise 1</a></li><li><a href="#3">Exercise 2</a></li><li><a href="#4">Exercise 2 Questions</a></li><li><a href="#5">Exercise 3</a></li><li><a href="#6">Exercise 3 Questions</a></li><li><a href="#7">Exercise 4</a></li><li><a href="#8">Exercise 4 Questions</a></li></ul></div><h2 id="1">ME 422 Lab 1</h2><p>Rahul Goyal</p><p>Jake Rogers</p><pre class="codeinput"><span class="comment">% Reset</span>
+clc;
+clear <span class="string">all</span>;
+close <span class="string">all</span>;
+</pre><h2 id="2">Exercise 1</h2><pre class="codeinput">figure;
+sim(<span class="string">'Lab1_1'</span>);
+
+<span class="comment">% Derivative of X</span>
+subplot(2, 1, 1);                       <span class="comment">% 2 rows, one column, first graph</span>
+plot(tout, simout(:,1), <span class="string">'LineWidth'</span>, 2);
+grid <span class="string">on</span>;
+title(<span class="string">'Derivative of X'</span>);
+xlabel(<span class="string">'Time [sec]'</span>);
+ylabel(<span class="string">'Value [units/sec]'</span>);
+axis([0 2 -0.2 1.2]);
+
+<span class="comment">% Value of X</span>
+subplot(2, 1, 2);                       <span class="comment">% 2 rows, one column, second graph</span>
+plot(tout, simout(:,2), <span class="string">'--'</span>,<span class="string">'LineWidth'</span>, 2);
+grid <span class="string">on</span>;
+title(<span class="string">'Value of X'</span>);
+xlabel(<span class="string">'Time [sec]'</span>);
+ylabel(<span class="string">'Value [units]'</span>);
+axis([0 2 -1 5]);
+</pre><img vspace="5" hspace="5" src="Lab1_01.png" alt=""> <h2 id="3">Exercise 2</h2><pre class="codeinput">figure;
+
+<span class="comment">% Time Constant: 1s | Gain: 0.5</span>
+sim(<span class="string">'Lab1_2A'</span>);
+subplot(3, 1, 1);                       <span class="comment">% 3 rows, one column, first graph</span>
+plot(tout, simout, <span class="string">'LineWidth'</span>, 2);
+title(<span class="string">'Time Constant: 1s | Gain: 0.5'</span>);
+xlabel(<span class="string">'Time (s)'</span>);
+ylabel(<span class="string">'Response (units)'</span>);
+xlim([0 6]);
+
+<span class="comment">% Time Constant: 0.2s | Gain: 8</span>
+sim(<span class="string">'Lab1_2B'</span>);
+subplot(3, 1, 2);                       <span class="comment">% 3 rows, one column, second graph</span>
+plot(tout, simout, <span class="string">'LineWidth'</span>, 2);
+title(<span class="string">'Time Constant: 0.2s | Gain: 8'</span>);
+xlabel(<span class="string">'Time (s)'</span>);
+ylabel(<span class="string">'Response (units)'</span>);
+xlim([0 3]);
+
+<span class="comment">% Time Constant: 14.5s | Gain: -0.7</span>
+sim(<span class="string">'Lab1_2C'</span>);
+subplot(3, 1, 3);                       <span class="comment">% 3 rows, one column, third graph</span>
+plot(tout, simout, <span class="string">'LineWidth'</span>, 2);
+title(<span class="string">'Time Constant: 14.5s | Gain: -0.7'</span>);
+xlabel(<span class="string">'Time (s)'</span>);
+ylabel(<span class="string">'Response (units)'</span>);
+xlim([0 60]);
+</pre><img vspace="5" hspace="5" src="Lab1_02.png" alt=""> <h2 id="4">Exercise 2 Questions</h2><p>The system behaves as expected: it approaches a final output change of 0.5 and takes one second to reach about 63.2% of this final output change.</p><p>To produce a steady-state response twice as great in the same time frame, the steady-state gain can be multiplied by 2.</p><p>To accelerate the system such that it responds twice as quickly as the original system, the time constant can be divided by 2.</p><h2 id="5">Exercise 3</h2><pre class="codeinput">figure;
+
+<span class="comment">% Damping Ratio: 0.15 | Frequency: 1.0 Hz</span>
+sim(<span class="string">'Lab1_3A'</span>);
+subplot(3, 1, 1);                       <span class="comment">% 3 rows, one column, first graph</span>
+plot(tout, simout, <span class="string">'LineWidth'</span>, 2);
+title(<span class="string">'Damping Ratio: 0.15 | Frequency: 1.0 Hz'</span>);
+xlabel(<span class="string">'Time(s)'</span>);
+ylabel(<span class="string">'Response (units)'</span>);
+xlim([0 7]);
+
+<span class="comment">% Damping Ratio: 0.30 | Frequency: 1.0 Hz</span>
+sim(<span class="string">'Lab1_3B'</span>);
+subplot(3, 1, 2);                       <span class="comment">% 3 rows, one column, second graph</span>
+plot(tout, simout, <span class="string">'LineWidth'</span>, 2);
+title(<span class="string">'Damping Ratio: 0.30 | Frequency: 1.0 Hz'</span>);
+xlabel(<span class="string">'Time(s)'</span>);
+ylabel(<span class="string">'Response (units)'</span>);
+xlim([0 4]);
+
+<span class="comment">% Damping Ratio: 0.15 | Frequency: 2.0 Hz</span>
+sim(<span class="string">'Lab1_3C'</span>);
+subplot(3, 1, 3);                       <span class="comment">% 3 rows, one column, third graph</span>
+plot(tout, simout, <span class="string">'LineWidth'</span>, 2);
+title(<span class="string">'Damping Ratio: 0.15 | Frequency: 2.0 Hz'</span>);
+xlabel(<span class="string">'Time(s)'</span>);
+ylabel(<span class="string">'Response (units)'</span>);
+xlim([0 4]);
+</pre><img vspace="5" hspace="5" src="Lab1_03.png" alt=""> <h2 id="6">Exercise 3 Questions</h2><p>Doubling the damping coefficient causes the step response to approach steady-state twice as quickly.</p><p>Doubling the oscillation frequency causes the step response to both oscillate at twice the frequency and, as a side-effect, also approach steady-state twice as quickly.</p><h2 id="7">Exercise 4</h2><pre class="codeinput">figure;
+
+<span class="comment">% Sys1Gain: 2, Sys1TC: 1s | Sys2Gain: 2, Sys2TC: 1s</span>
+sim(<span class="string">'Lab1_4A'</span>);
+subplot(2, 1, 1);                       <span class="comment">% 2 rows, one column, first graph</span>
+plot(tout, simout, <span class="string">'LineWidth'</span>, 2);
+title(<span class="string">'KSS1: 2, TC1: 1s | KSS2: 2, TC2: 1s'</span>);
+xlabel(<span class="string">'Time(s)'</span>);
+ylabel(<span class="string">'Response (units)'</span>);
+xlim([0 10]);
+
+<span class="comment">% Sys1Gain: 0.1, Sys1TC: 0.1s | Sys2Gain: 10, Sys2TC: 5s</span>
+sim(<span class="string">'Lab1_4B'</span>);
+subplot(2, 1, 2);                       <span class="comment">% 2 rows, one column, second graph</span>
+plot(tout, simout, <span class="string">'LineWidth'</span>, 2);
+title(<span class="string">'KSS1: 0.1, TC1: 0.1s | KSS2: 10, TC2: 5s'</span>);
+xlabel(<span class="string">'Time(s)'</span>);
+ylabel(<span class="string">'Response (units)'</span>);
+xlim([0 30]);
+</pre><img vspace="5" hspace="5" src="Lab1_04.png" alt=""> <h2 id="8">Exercise 4 Questions</h2><p>The second-order system constituted by two first-order systems in series does not oscillate. Rather, it acts like a step response.</p><p>The two first-order systems in series results in a step-response. This step-response has a gain equal to the product of the gains of each subsystem and a time constant equal to the sum of the time constants of each subsystem.</p><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2018a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% ME 422 Lab 1
+% Rahul Goyal
+%
+% Jake Rogers
+
+% Reset
+clc;
+clear all;
+close all;
+
+
+
+%% Exercise 1
+figure;
+sim('Lab1_1');
+
+% Derivative of X
+subplot(2, 1, 1);                       % 2 rows, one column, first graph
+plot(tout, simout(:,1), 'LineWidth', 2);
+grid on;
+title('Derivative of X');
+xlabel('Time [sec]');
+ylabel('Value [units/sec]');
+axis([0 2 -0.2 1.2]);
+
+% Value of X 
+subplot(2, 1, 2);                       % 2 rows, one column, second graph
+plot(tout, simout(:,2), 'REPLACE_WITH_DASH_DASH','LineWidth', 2);
+grid on;
+title('Value of X');
+xlabel('Time [sec]');
+ylabel('Value [units]');
+axis([0 2 -1 5]);
+
+
+
+%% Exercise 2
+figure;
+
+% Time Constant: 1s | Gain: 0.5
+sim('Lab1_2A');
+subplot(3, 1, 1);                       % 3 rows, one column, first graph
+plot(tout, simout, 'LineWidth', 2);
+title('Time Constant: 1s | Gain: 0.5');
+xlabel('Time (s)');
+ylabel('Response (units)');
+xlim([0 6]);
+
+% Time Constant: 0.2s | Gain: 8
+sim('Lab1_2B');
+subplot(3, 1, 2);                       % 3 rows, one column, second graph
+plot(tout, simout, 'LineWidth', 2);
+title('Time Constant: 0.2s | Gain: 8');
+xlabel('Time (s)');
+ylabel('Response (units)');
+xlim([0 3]);
+
+% Time Constant: 14.5s | Gain: -0.7
+sim('Lab1_2C');
+subplot(3, 1, 3);                       % 3 rows, one column, third graph
+plot(tout, simout, 'LineWidth', 2);
+title('Time Constant: 14.5s | Gain: -0.7');
+xlabel('Time (s)');
+ylabel('Response (units)');
+xlim([0 60]);
+
+%% Exercise 2 Questions
+% The system behaves as expected: it approaches a final output change of
+% 0.5 and takes one second to reach about 63.2% of this final output
+% change.
+%
+% To produce a steady-state response twice as great in the same time frame,
+% the steady-state gain can be multiplied by 2.
+%
+% To accelerate the system such that it responds twice as quickly as the
+% original system, the time constant can be divided by 2.
+
+
+
+%% Exercise 3
+figure;
+
+% Damping Ratio: 0.15 | Frequency: 1.0 Hz
+sim('Lab1_3A');
+subplot(3, 1, 1);                       % 3 rows, one column, first graph
+plot(tout, simout, 'LineWidth', 2);
+title('Damping Ratio: 0.15 | Frequency: 1.0 Hz');
+xlabel('Time(s)');
+ylabel('Response (units)');
+xlim([0 7]);
+
+% Damping Ratio: 0.30 | Frequency: 1.0 Hz
+sim('Lab1_3B');
+subplot(3, 1, 2);                       % 3 rows, one column, second graph
+plot(tout, simout, 'LineWidth', 2);
+title('Damping Ratio: 0.30 | Frequency: 1.0 Hz');
+xlabel('Time(s)');
+ylabel('Response (units)');
+xlim([0 4]);
+
+% Damping Ratio: 0.15 | Frequency: 2.0 Hz
+sim('Lab1_3C');
+subplot(3, 1, 3);                       % 3 rows, one column, third graph
+plot(tout, simout, 'LineWidth', 2);
+title('Damping Ratio: 0.15 | Frequency: 2.0 Hz');
+xlabel('Time(s)');
+ylabel('Response (units)');
+xlim([0 4]);
+
+%% Exercise 3 Questions
+% Doubling the damping coefficient causes the step response to approach
+% steady-state twice as quickly.
+%
+% Doubling the oscillation frequency causes the step response to both
+% oscillate at twice the frequency and, as a side-effect, also approach
+% steady-state twice as quickly.
+
+
+
+%% Exercise 4
+figure;
+
+% Sys1Gain: 2, Sys1TC: 1s | Sys2Gain: 2, Sys2TC: 1s
+sim('Lab1_4A');
+subplot(2, 1, 1);                       % 2 rows, one column, first graph
+plot(tout, simout, 'LineWidth', 2);
+title('KSS1: 2, TC1: 1s | KSS2: 2, TC2: 1s');
+xlabel('Time(s)');
+ylabel('Response (units)');
+xlim([0 10]);
+
+% Sys1Gain: 0.1, Sys1TC: 0.1s | Sys2Gain: 10, Sys2TC: 5s
+sim('Lab1_4B');
+subplot(2, 1, 2);                       % 2 rows, one column, second graph
+plot(tout, simout, 'LineWidth', 2);
+title('KSS1: 0.1, TC1: 0.1s | KSS2: 10, TC2: 5s');
+xlabel('Time(s)');
+ylabel('Response (units)');
+xlim([0 30]);
+
+%% Exercise 4 Questions
+% The second-order system constituted by two first-order systems in series
+% does not oscillate. Rather, it acts like a step response.
+% 
+% The two first-order systems in series results in a step-response. This
+% step-response has a gain equal to the product of the gains of each
+% subsystem and a time constant equal to the sum of the time constants of
+% each subsystem.
+##### SOURCE END #####
+--></body></html>
