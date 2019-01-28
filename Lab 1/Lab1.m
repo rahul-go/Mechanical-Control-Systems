@@ -26,18 +26,19 @@ subplot(2, 1, 1);                       % 2 rows, one column, first graph
 plot(tout, simout(:,1), 'LineWidth', 2);
 grid on;
 title('Derivative of X');
-xlabel('Time [sec]');
-ylabel('Value [units/sec]');
-axis([0 2 -0.2 1.2]);
+xlabel('Time (s)');
+ylabel('Value (ft/s^2)');
 
 % Value of X 
 subplot(2, 1, 2);                       % 2 rows, one column, second graph
 plot(tout, simout(:,2), '--','LineWidth', 2);
 grid on;
 title('Value of X');
-xlabel('Time [sec]');
-ylabel('Value [units]');
-axis([0 2 -1 5]);
+xlabel({'Time (s)'
+        ''
+        % Figure label
+        '\bfFigure 1: \rmMass-Damper System with Force Input'});
+ylabel('Value (ft/s)');
 
 
 
@@ -46,30 +47,33 @@ axis([0 2 -1 5]);
 
 figure;
 
-% Time Constant: 1s | Gain: 0.5
+% Time Constant = 1s | Gain = 0.5
 sim('Lab1_2A');
 subplot(3, 1, 1);                       % 3 rows, one column, first graph
 plot(tout, simout, 'LineWidth', 2);
-title('Time Constant: 1s | Gain: 0.5');
+title('Time Constant = 1s | Gain = 0.5');
 xlabel('Time (s)');
 ylabel('Response (units)');
 xlim([0, 6]);
 
-% Time Constant: 0.2s | Gain: 8
+% Time Constant = 0.2s | Gain = 8
 sim('Lab1_2B');
 subplot(3, 1, 2);                       % 3 rows, one column, second graph
 plot(tout, simout, 'LineWidth', 2);
-title('Time Constant: 0.2s | Gain: 8');
+title('Time Constant = 0.2s | Gain = 8');
 xlabel('Time (s)');
 ylabel('Response (units)');
 xlim([0, 3]);
 
-% Time Constant: 14.5s | Gain: -0.7
+% Time Constant = 14.5s | Gain = -0.7
 sim('Lab1_2C');
 subplot(3, 1, 3);                       % 3 rows, one column, third graph
 plot(tout, simout, 'LineWidth', 2);
-title('Time Constant: 14.5s | Gain: -0.7');
-xlabel('Time (s)');
+title('Time Constant = 14.5s | Gain = -0.7');
+xlabel({'Time (s)'
+        ''
+        % Figure label
+        '\bfFigure 2: \rmFirst-Order Systems'});
 ylabel('Response (units)');
 xlim([0, 60]);
 
@@ -92,30 +96,33 @@ xlim([0, 60]);
 
 figure;
 
-% Damping Ratio: 0.15 | Frequency: 1.0 Hz
+% Damping Ratio = 0.15 | Frequency = 1.0 Hz
 sim('Lab1_3A');
 subplot(3, 1, 1);                       % 3 rows, one column, first graph
 plot(tout, simout, 'LineWidth', 2);
-title('Damping Ratio: 0.15 | Frequency: 1.0 Hz');
+title('Damping Ratio = 0.15 | Frequency = 1.0 Hz');
 xlabel('Time(s)');
 ylabel('Response (units)');
 xlim([0, 7]);
 
-% Damping Ratio: 0.30 | Frequency: 1.0 Hz
+% Damping Ratio = 0.30 | Frequency = 1.0 Hz
 sim('Lab1_3B');
 subplot(3, 1, 2);                       % 3 rows, one column, second graph
 plot(tout, simout, 'LineWidth', 2);
-title('Damping Ratio: 0.30 | Frequency: 1.0 Hz');
+title('Damping Ratio = 0.30 | Frequency = 1.0 Hz');
 xlabel('Time(s)');
 ylabel('Response (units)');
 xlim([0, 4]);
 
-% Damping Ratio: 0.15 | Frequency: 2.0 Hz
+% Damping Ratio = 0.15 | Frequency = 2.0 Hz
 sim('Lab1_3C');
 subplot(3, 1, 3);                       % 3 rows, one column, third graph
 plot(tout, simout, 'LineWidth', 2);
-title('Damping Ratio: 0.15 | Frequency: 2.0 Hz');
-xlabel('Time(s)');
+title('Damping Ratio = 0.15 | Frequency = 2.0 Hz');
+xlabel({'Time (s)'
+        ''
+        % Figure label
+        '\bfFigure 3: \rmSecond-Order Systems'});
 ylabel('Response (units)');
 xlim([0, 4]);
 
@@ -134,21 +141,24 @@ xlim([0, 4]);
 
 figure;
 
-% Sys1Gain: 2, Sys1TC: 1s | Sys2Gain: 2, Sys2TC: 1s
+% Sys1Gain = 2, Sys1TC = 1s | Sys2Gain = 2, Sys2TC = 1s
 sim('Lab1_4A');
 subplot(2, 1, 1);                       % 2 rows, one column, first graph
 plot(tout, simout, 'LineWidth', 2);
-title('KSS1: 2, TC1: 1s | KSS2: 2, TC2: 1s');
+title('KSS1 = 2, TC1 = 1s | KSS2 = 2, TC2 = 1s');
 xlabel('Time(s)');
 ylabel('Response (units)');
 xlim([0, 10]);
 
-% Sys1Gain: 0.1, Sys1TC: 0.1s | Sys2Gain: 10, Sys2TC: 5s
+% Sys1Gain = 0.1, Sys1TC = 0.1s | Sys2Gain = 10, Sys2TC = 5s
 sim('Lab1_4B');
 subplot(2, 1, 2);                       % 2 rows, one column, second graph
 plot(tout, simout, 'LineWidth', 2);
-title('KSS1: 0.1, TC1: 0.1s | KSS2: 10, TC2: 5s');
-xlabel('Time(s)');
+title('KSS1 = 0.1, TC1 = 0.1s | KSS2 = 10, TC2 = 5s');
+xlabel({'Time (s)'
+        ''
+        % Figure label
+        '\bfFigure 4: \rmTwo First-Order Systems in Series'});
 ylabel('Response (units)');
 xlim([0, 30]);
 
@@ -225,7 +235,10 @@ figure;
 sim('Lab1_6A');
 plot(tout, simout, 'LineWidth', 2);
 title('Proportional-Only Control of Tank');
-xlabel('Time (s)');
+xlabel({'Time (s)'
+        ''
+        % Figure label
+        '\bfFigure 6A: \rmProportional-Only Control of a Tank'});
 ylabel('Height (in)');
 xlim([0, 75]);
 
@@ -240,7 +253,10 @@ figure;
 sim('Lab1_6B');
 plot(tout, simout, 'LineWidth', 2);
 title('Proportional-Only Control of a Tank: 2 Steps');
-xlabel('Time (s)');
+xlabel({'Time (s)'
+        ''
+        % Figure label
+        '\bfFigure 6B: \rmProportional-Only Control of a Tank: 2 Steps'});
 ylabel('Height (in)');
 xlim([0, 180]);
 
@@ -255,7 +271,10 @@ figure;
 sim('Lab1_6C');
 plot(tout, simout, 'LineWidth', 2);
 title('Proportional-Only Control of a Tank: <10% Error');
-xlabel('Time (s)');
+xlabel({'Time (s)'
+        ''
+        % Figure label
+        '\bfFigure 6C: \rmProportional-Only Control of a Tank: <10% Error'});
 ylabel('Height (in)');
 xlim([0, 120]);
 
@@ -266,12 +285,12 @@ xlim([0, 120]);
 % second.
 
 figure;
+sim('Lab1_6D');
 
 % Step 1
-sim('Lab1_6D');
 subplot(2, 1, 1);
 plot(tout, simout, 'LineWidth', 2);
-title('Proportional-Only Control of a Tank: <1s Time Constant Step 1');
+title('Proportional-Only Control of a Tank: <1s Time Constant, Step 1');
 xlabel('Time (s)');
 ylabel('Height (in)');
 xlim([0, 6]);
@@ -279,8 +298,11 @@ xlim([0, 6]);
 % Step 2
 subplot(2, 1, 2);
 plot(tout, simout, 'LineWidth', 2);
-title('Proportional-Only Control of a Tank: <1s Time Constant Step 2');
-xlabel('Time (s)');
+title('Proportional-Only Control of a Tank: <1s Time Constant, Step 2');
+xlabel({'Time (s)'
+        ''
+        % Figure label
+        '\bfFigure 6D: \rmProportional-Only Control of a Tank: <1s Time Constant'});
 ylabel('Height (in)');
 xlim([74, 80]);
 
@@ -305,7 +327,10 @@ figure;
 sim('Lab1_6E');
 plot(tout, simout, 'LineWidth', 2);
 title('Proportional-Only Control of a Tank: Saturation');
-xlabel('Time (s)');
+xlabel({'Time (s)'
+        ''
+        % Figure label
+        '\bfFigure 6E: \rmProportional-Only Control of a Tank: Saturation'});
 ylabel('Height (in)');
 xlim([0, 120]);
 
@@ -319,7 +344,10 @@ figure;
 sim('Lab1_6F');
 plot(tout, simout, 'LineWidth', 2);
 title('Proportional-Only Control of a Tank: Eliminating Saturation');
-xlabel('Time (s)');
+xlabel({'Time (s)'
+        ''
+        % Figure label
+        '\bfFigure 6F: \rmProportional-Only Control of a Tank: Eliminating Saturation'});
 ylabel('Height (in)');
 xlim([0, 120]);
 
@@ -333,6 +361,29 @@ xlim([0, 120]);
 % user to put in the absolute tank level desired and have the output read
 % out in absolute tank level.
 
+figure;
+
+sim('Lab1_7A');
+subplot(2, 1, 1);
+plot(tout, simout, 'LineWidth', 2);
+title('Proportional-Only Control of a Tank: Actual Levels, 19 in');
+xlabel('Time (s)');
+ylabel('Height (in)');
+xlim([0, 30]);
+
+sim('Lab1_7B');
+subplot(2, 1, 2);
+plot(tout, simout, 'LineWidth', 2);
+title('Proportional-Only Control of a Tank: Actual Levels, 17 in');
+xlabel({'Time (s)'
+        ''
+        % Figure label
+        '\bfFigure 7: \rmProportional-Only Control of a Tank: Actual Levels'});
+ylabel('Height (in)');
+xlim([0, 30]);
+
+
+
 %% Exercise 7 Questions
 
 
@@ -343,8 +394,28 @@ xlim([0, 120]);
 % controller in a unity-feedback control loop. KP = 1. The system is
 % subjected to a step input.
 
-% KSS = 2.3
+figure;
 
-% KSS = 4.6
+% Kp = 1
+sim('Lab1_8A');
+subplot(2, 1, 1);
+plot(tout, simout, 'LineWidth', 2);
+title('Proportional-Only Control of a Second-Order System: Kp = 1');
+xlabel('Time (s)');
+ylabel('Units');
+xlim([0.75, 1.5]);
+
+% Kp = 2
+sim('Lab1_8B');
+subplot(2, 1, 2);
+plot(tout, simout, 'LineWidth', 2);
+title('Proportional-Only Control of a Second-Order System: Kp = 2');
+xlabel({'Time (s)'
+        ''
+        % Figure label
+        '\bfFigure 8: \rmProportional-Only Control of a Second-Order System'});
+ylabel('Units');
+xlim([0.75, 1.5]);
 
 %% Exercise 8 Questions
+
