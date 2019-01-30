@@ -2,6 +2,8 @@
 % Rahul Goyal
 %
 % Jake Rogers
+%
+% January 28, 2019
 
 % Reset
 clc;
@@ -78,7 +80,7 @@ ylabel('Response (units)');
 xlim([0, 60]);
 
 %% Exercise 2 Questions
-% The system behaves as expected: With an input step size of 1, it approaches a final output change of 0.5 and takes one second to reach about 63.2% of this final output change.
+% The system behaves as expected. With an input step size of 1, it approaches a final output change of 0.5 and takes about one second to reach 63.2% of this final output change.
 % 
 % To produce a steady-state response twice as great in the same time frame, the steady-state gain can be multiplied by 2.
 % 
@@ -87,8 +89,8 @@ xlim([0, 60]);
 
 
 %% Exercise 3
-% Second-order systems with varying steady-state gains, damping ratios, and
-% natural frequencies.
+% Second-order systems with a steady-state gain of 3 and varying damping
+% ratios and natural frequencies.
 
 figure;
 
@@ -123,9 +125,7 @@ ylabel('Response (units)');
 xlim([0, 4]);
 
 %% Exercise 3 Questions
-% Doubling the damping coefficient causes the step response to approach steady-state twice as quickly.
-% 
-% The percent overshoot decreases compared to the original system -- it decreases from 62% to 37%.
+% Doubling the damping coefficient causes the step response to approach steady-state twice as quickly. The percent overshoot decreases compared to the original system -- it decreases from 62% to 37%.
 % 
 % Doubling the oscillation frequency causes the step response to both oscillate at twice the frequency and, as a side-effect, also approach steady-state twice as quickly. The percent overshoot remains the same as the original system.
 
@@ -160,7 +160,7 @@ xlim([0, 30]);
 %% Exercise 4 Questions
 % The steady-state gain of the system is the product of the gains of each first-order system.
 % 
-% The second-order system constituted by the two first-order systems in series behaves in a similar manner to a first-order system. The response of the system does not oscillate and is similar to a first-order step response.% The two first-order systems in series results in a step-response. This
+% The second-order system constituted by the two first-order systems in series behaves in a similar manner to a first-order system. The response of the system does not oscillate and is similar to a first-order step response.
 % 
 % The response of the two different first-order systems in series resembles a first-order response more than that of the same first-order systems in series. The step-response has a gain equal to the product of the gains of each subsystem and a time constant equal to the sum of the time constants of each subsystem.
 
@@ -174,7 +174,7 @@ figure;
 sim('Lab1_5');
 
 % PID Controller
-subplot(4, 1, 1);
+subplot(4, 1, 1);                       % 4 rows, one column, first graph
 plot(tout, simout(:, 1), 'LineWidth', 2);
 title('PID Controller');
 xlabel('Time(s)');
@@ -182,21 +182,21 @@ ylabel('Response (units)');
 ylim([0 10]);
 
 % Proportional Control
-subplot(4, 1, 2);
+subplot(4, 1, 2);                       % 4 rows, one column, second graph
 plot(tout, simout(:, 2), 'LineWidth', 2);
 title('Proportional Control');
 xlabel('Time(s)');
 ylabel('Response (units)');
 
 % Integral Control
-subplot(4, 1, 3);
+subplot(4, 1, 3);                       % 4 rows, one column, third graph
 plot(tout, simout(:, 3), 'LineWidth', 2);
 title('Integral Control');
 xlabel('Time(s)');
 ylabel('Response (units)');
 
 % Derivative Control
-subplot(4, 1, 4);
+subplot(4, 1, 4);                       % 4 rows, one column, fourth graph
 plot(tout, simout(:, 4), 'LineWidth', 2);
 title('Derivative Control');
 xlabel({'Time (s)'
@@ -304,7 +304,7 @@ figure;
 sim('Lab1_6D');
 
 % Step 1
-subplot(2, 1, 1);
+subplot(2, 1, 1);                       % 2 rows, one column, first graph
 plot(tout, simout, 'LineWidth', 2);
 title('Proportional-Only Control of a Tank: <1s Time Constant, Step 1');
 xlabel('Time (s)');
@@ -312,7 +312,7 @@ ylabel('Height (in)');
 xlim([0, 6]);
 
 % Step 2
-subplot(2, 1, 2);
+subplot(2, 1, 2);                       % 2 rows, one column, second graph
 plot(tout, simout, 'LineWidth', 2);
 title('Proportional-Only Control of a Tank: <1s Time Constant, Step 2');
 xlabel({'Time (s)'
@@ -381,7 +381,7 @@ xlim([0, 120]);
 figure;
 
 sim('Lab1_7A');
-subplot(2, 1, 1);
+subplot(2, 1, 1);                       % 2 rows, one column, first graph
 plot(tout, simout, 'LineWidth', 2);
 title('Proportional-Only Control of a Tank: Actual Levels, 19 in');
 xlabel('Time (s)');
@@ -389,7 +389,7 @@ ylabel('Height (in)');
 xlim([0, 30]);
 
 sim('Lab1_7B');
-subplot(2, 1, 2);
+subplot(2, 1, 2);                       % 2 rows, one column, second graph
 plot(tout, simout, 'LineWidth', 2);
 title('Proportional-Only Control of a Tank: Actual Levels, 17 in');
 xlabel({'Time (s)'
@@ -416,7 +416,7 @@ figure;
 
 % Kp = 1
 sim('Lab1_8A');
-subplot(2, 1, 1);
+subplot(2, 1, 1);                       % 2 rows, one column, first graph
 plot(tout, simout, 'LineWidth', 2);
 title('Proportional-Only Control of a Second-Order System: Kp = 1');
 xlabel('Time (s)');
@@ -425,7 +425,7 @@ xlim([0.75, 1.5]);
 
 % Kp = 2
 sim('Lab1_8B');
-subplot(2, 1, 2);
+subplot(2, 1, 2);                       % 2 rows, one column, second graph
 plot(tout, simout, 'LineWidth', 2);
 title('Proportional-Only Control of a Second-Order System: Kp = 2');
 xlabel({'Time (s)'

@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>Lab1</title><meta name="generator" content="MATLAB 9.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2019-01-28"><meta name="DC.source" content="Lab1.m"><style type="text/css">
+      --><title>Lab1</title><meta name="generator" content="MATLAB 9.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2019-01-30"><meta name="DC.source" content="Lab1.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -66,7 +66,7 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#1">ME 422 Lab 1</a></li><li><a href="#2">Exercise 1</a></li><li><a href="#3">Exercise 2</a></li><li><a href="#4">Exercise 2 Questions</a></li><li><a href="#5">Exercise 3</a></li><li><a href="#6">Exercise 3 Questions</a></li><li><a href="#7">Exercise 4</a></li><li><a href="#8">Exercise 4 Questions</a></li><li><a href="#9">Exercise 5</a></li><li><a href="#10">Exercise 5 Questions</a></li><li><a href="#11">Exercise 6</a></li><li><a href="#12">Exercise 6A</a></li><li><a href="#13">Exercise 6A Questions</a></li><li><a href="#14">Exercise 6B</a></li><li><a href="#15">Exercise 6B Questions</a></li><li><a href="#16">Exercise 6C</a></li><li><a href="#17">Exercise 6D</a></li><li><a href="#18">Exercise 6D Questions</a></li><li><a href="#19">Exercise 6E</a></li><li><a href="#20">Exercise 6F</a></li><li><a href="#21">Exercise 7</a></li><li><a href="#22">Exercise 7 Questions</a></li><li><a href="#23">Exercise 8</a></li><li><a href="#24">Exercise 8 Questions</a></li></ul></div><h2 id="1">ME 422 Lab 1</h2><p>Rahul Goyal</p><p>Jake Rogers</p><pre class="codeinput"><span class="comment">% Reset</span>
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#1">ME 422 Lab 1</a></li><li><a href="#2">Exercise 1</a></li><li><a href="#3">Exercise 2</a></li><li><a href="#4">Exercise 2 Questions</a></li><li><a href="#5">Exercise 3</a></li><li><a href="#6">Exercise 3 Questions</a></li><li><a href="#7">Exercise 4</a></li><li><a href="#8">Exercise 4 Questions</a></li><li><a href="#9">Exercise 5</a></li><li><a href="#10">Exercise 5 Questions</a></li><li><a href="#11">Exercise 6</a></li><li><a href="#12">Exercise 6A</a></li><li><a href="#13">Exercise 6A Questions</a></li><li><a href="#14">Exercise 6B</a></li><li><a href="#15">Exercise 6B Questions</a></li><li><a href="#16">Exercise 6C</a></li><li><a href="#17">Exercise 6D</a></li><li><a href="#18">Exercise 6D Questions</a></li><li><a href="#19">Exercise 6E</a></li><li><a href="#20">Exercise 6F</a></li><li><a href="#21">Exercise 7</a></li><li><a href="#22">Exercise 7 Questions</a></li><li><a href="#23">Exercise 8</a></li><li><a href="#24">Exercise 8 Questions</a></li></ul></div><h2 id="1">ME 422 Lab 1</h2><p>Rahul Goyal</p><p>Jake Rogers</p><p>January 28, 2019</p><pre class="codeinput"><span class="comment">% Reset</span>
 clc;
 clear <span class="string">all</span>;
 close <span class="string">all</span>;
@@ -122,7 +122,7 @@ xlabel({<span class="string">'Time (s)'</span>
         <span class="string">'\bfFigure 2: \rmFirst-Order Systems'</span>});
 ylabel(<span class="string">'Response (units)'</span>);
 xlim([0, 60]);
-</pre><img vspace="5" hspace="5" src="Lab1_02.png" alt=""> <h2 id="4">Exercise 2 Questions</h2><p>The system behaves as expected: With an input step size of 1, it approaches a final output change of 0.5 and takes one second to reach about 63.2% of this final output change.</p><p>To produce a steady-state response twice as great in the same time frame, the steady-state gain can be multiplied by 2.</p><p>To accelerate the system such that it responds twice as quickly as the original system, the time constant can be divided by 2.</p><h2 id="5">Exercise 3</h2><p>Second-order systems with varying steady-state gains, damping ratios, and natural frequencies.</p><pre class="codeinput">figure;
+</pre><img vspace="5" hspace="5" src="Lab1_02.png" alt=""> <h2 id="4">Exercise 2 Questions</h2><p>The system behaves as expected. With an input step size of 1, it approaches a final output change of 0.5 and takes about one second to reach 63.2% of this final output change.</p><p>To produce a steady-state response twice as great in the same time frame, the steady-state gain can be multiplied by 2.</p><p>To accelerate the system such that it responds twice as quickly as the original system, the time constant can be divided by 2.</p><h2 id="5">Exercise 3</h2><p>Second-order systems with a steady-state gain of 3 and varying damping ratios and natural frequencies.</p><pre class="codeinput">figure;
 
 <span class="comment">% Damping Ratio = 0.15 | Frequency = 1.0 Hz</span>
 sim(<span class="string">'Lab1_3A'</span>);
@@ -153,7 +153,7 @@ xlabel({<span class="string">'Time (s)'</span>
         <span class="string">'\bfFigure 3: \rmSecond-Order Systems'</span>});
 ylabel(<span class="string">'Response (units)'</span>);
 xlim([0, 4]);
-</pre><img vspace="5" hspace="5" src="Lab1_03.png" alt=""> <h2 id="6">Exercise 3 Questions</h2><p>Doubling the damping coefficient causes the step response to approach steady-state twice as quickly.</p><p>The percent overshoot decreases compared to the original system -- it decreases from 62% to 37%.</p><p>Doubling the oscillation frequency causes the step response to both oscillate at twice the frequency and, as a side-effect, also approach steady-state twice as quickly. The percent overshoot remains the same as the original system.</p><h2 id="7">Exercise 4</h2><p>Systems with two first-order systems in series.</p><pre class="codeinput">figure;
+</pre><img vspace="5" hspace="5" src="Lab1_03.png" alt=""> <h2 id="6">Exercise 3 Questions</h2><p>Doubling the damping coefficient causes the step response to approach steady-state twice as quickly. The percent overshoot decreases compared to the original system -- it decreases from 62% to 37%.</p><p>Doubling the oscillation frequency causes the step response to both oscillate at twice the frequency and, as a side-effect, also approach steady-state twice as quickly. The percent overshoot remains the same as the original system.</p><h2 id="7">Exercise 4</h2><p>Systems with two first-order systems in series.</p><pre class="codeinput">figure;
 
 <span class="comment">% Sys1Gain = 2, Sys1TC = 1s | Sys2Gain = 2, Sys2TC = 1s</span>
 sim(<span class="string">'Lab1_4A'</span>);
@@ -175,11 +175,11 @@ xlabel({<span class="string">'Time (s)'</span>
         <span class="string">'\bfFigure 4: \rmTwo First-Order Systems in Series'</span>});
 ylabel(<span class="string">'Response (units)'</span>);
 xlim([0, 30]);
-</pre><img vspace="5" hspace="5" src="Lab1_04.png" alt=""> <h2 id="8">Exercise 4 Questions</h2><p>The steady-state gain of the system is the product of the gains of each first-order system.</p><p>The second-order system constituted by the two first-order systems in series behaves in a similar manner to a first-order system. The response of the system does not oscillate and is similar to a first-order step response.% The two first-order systems in series results in a step-response. This</p><p>The response of the two different first-order systems in series resembles a first-order response more than that of the same first-order systems in series. The step-response has a gain equal to the product of the gains of each subsystem and a time constant equal to the sum of the time constants of each subsystem.</p><h2 id="9">Exercise 5</h2><p>PID controller by itself with no plant or feedback. All gains = 1. Unit step which occurs at time = 1 second.</p><pre class="codeinput">figure;
+</pre><img vspace="5" hspace="5" src="Lab1_04.png" alt=""> <h2 id="8">Exercise 4 Questions</h2><p>The steady-state gain of the system is the product of the gains of each first-order system.</p><p>The second-order system constituted by the two first-order systems in series behaves in a similar manner to a first-order system. The response of the system does not oscillate and is similar to a first-order step response.</p><p>The response of the two different first-order systems in series resembles a first-order response more than that of the same first-order systems in series. The step-response has a gain equal to the product of the gains of each subsystem and a time constant equal to the sum of the time constants of each subsystem.</p><h2 id="9">Exercise 5</h2><p>PID controller by itself with no plant or feedback. All gains = 1. Unit step which occurs at time = 1 second.</p><pre class="codeinput">figure;
 sim(<span class="string">'Lab1_5'</span>);
 
 <span class="comment">% PID Controller</span>
-subplot(4, 1, 1);
+subplot(4, 1, 1);                       <span class="comment">% 4 rows, one column, first graph</span>
 plot(tout, simout(:, 1), <span class="string">'LineWidth'</span>, 2);
 title(<span class="string">'PID Controller'</span>);
 xlabel(<span class="string">'Time(s)'</span>);
@@ -187,21 +187,21 @@ ylabel(<span class="string">'Response (units)'</span>);
 ylim([0 10]);
 
 <span class="comment">% Proportional Control</span>
-subplot(4, 1, 2);
+subplot(4, 1, 2);                       <span class="comment">% 4 rows, one column, second graph</span>
 plot(tout, simout(:, 2), <span class="string">'LineWidth'</span>, 2);
 title(<span class="string">'Proportional Control'</span>);
 xlabel(<span class="string">'Time(s)'</span>);
 ylabel(<span class="string">'Response (units)'</span>);
 
 <span class="comment">% Integral Control</span>
-subplot(4, 1, 3);
+subplot(4, 1, 3);                       <span class="comment">% 4 rows, one column, third graph</span>
 plot(tout, simout(:, 3), <span class="string">'LineWidth'</span>, 2);
 title(<span class="string">'Integral Control'</span>);
 xlabel(<span class="string">'Time(s)'</span>);
 ylabel(<span class="string">'Response (units)'</span>);
 
 <span class="comment">% Derivative Control</span>
-subplot(4, 1, 4);
+subplot(4, 1, 4);                       <span class="comment">% 4 rows, one column, fourth graph</span>
 plot(tout, simout(:, 4), <span class="string">'LineWidth'</span>, 2);
 title(<span class="string">'Derivative Control'</span>);
 xlabel({<span class="string">'Time (s)'</span>
@@ -243,7 +243,7 @@ xlim([0, 120]);
 sim(<span class="string">'Lab1_6D'</span>);
 
 <span class="comment">% Step 1</span>
-subplot(2, 1, 1);
+subplot(2, 1, 1);                       <span class="comment">% 2 rows, one column, first graph</span>
 plot(tout, simout, <span class="string">'LineWidth'</span>, 2);
 title(<span class="string">'Proportional-Only Control of a Tank: &lt;1s Time Constant, Step 1'</span>);
 xlabel(<span class="string">'Time (s)'</span>);
@@ -251,7 +251,7 @@ ylabel(<span class="string">'Height (in)'</span>);
 xlim([0, 6]);
 
 <span class="comment">% Step 2</span>
-subplot(2, 1, 2);
+subplot(2, 1, 2);                       <span class="comment">% 2 rows, one column, second graph</span>
 plot(tout, simout, <span class="string">'LineWidth'</span>, 2);
 title(<span class="string">'Proportional-Only Control of a Tank: &lt;1s Time Constant, Step 2'</span>);
 xlabel({<span class="string">'Time (s)'</span>
@@ -283,7 +283,7 @@ xlim([0, 120]);
 </pre><img vspace="5" hspace="5" src="Lab1_11.png" alt=""> <h2 id="21">Exercise 7</h2><p>Work with real tank levels, not just deviations from a reference tank level. The reference tank level is 18&#8221;. The system is set up to allow a user to put in the absolute tank level desired and have the output read out in absolute tank level.</p><pre class="codeinput">figure;
 
 sim(<span class="string">'Lab1_7A'</span>);
-subplot(2, 1, 1);
+subplot(2, 1, 1);                       <span class="comment">% 2 rows, one column, first graph</span>
 plot(tout, simout, <span class="string">'LineWidth'</span>, 2);
 title(<span class="string">'Proportional-Only Control of a Tank: Actual Levels, 19 in'</span>);
 xlabel(<span class="string">'Time (s)'</span>);
@@ -291,7 +291,7 @@ ylabel(<span class="string">'Height (in)'</span>);
 xlim([0, 30]);
 
 sim(<span class="string">'Lab1_7B'</span>);
-subplot(2, 1, 2);
+subplot(2, 1, 2);                       <span class="comment">% 2 rows, one column, second graph</span>
 plot(tout, simout, <span class="string">'LineWidth'</span>, 2);
 title(<span class="string">'Proportional-Only Control of a Tank: Actual Levels, 17 in'</span>);
 xlabel({<span class="string">'Time (s)'</span>
@@ -304,7 +304,7 @@ xlim([0, 30]);
 
 <span class="comment">% Kp = 1</span>
 sim(<span class="string">'Lab1_8A'</span>);
-subplot(2, 1, 1);
+subplot(2, 1, 1);                       <span class="comment">% 2 rows, one column, first graph</span>
 plot(tout, simout, <span class="string">'LineWidth'</span>, 2);
 title(<span class="string">'Proportional-Only Control of a Second-Order System: Kp = 1'</span>);
 xlabel(<span class="string">'Time (s)'</span>);
@@ -313,7 +313,7 @@ xlim([0.75, 1.5]);
 
 <span class="comment">% Kp = 2</span>
 sim(<span class="string">'Lab1_8B'</span>);
-subplot(2, 1, 2);
+subplot(2, 1, 2);                       <span class="comment">% 2 rows, one column, second graph</span>
 plot(tout, simout, <span class="string">'LineWidth'</span>, 2);
 title(<span class="string">'Proportional-Only Control of a Second-Order System: Kp = 2'</span>);
 xlabel({<span class="string">'Time (s)'</span>
@@ -328,6 +328,8 @@ xlim([0.75, 1.5]);
 % Rahul Goyal
 %
 % Jake Rogers
+%
+% January 28, 2019
 
 % Reset
 clc;
@@ -404,7 +406,7 @@ ylabel('Response (units)');
 xlim([0, 60]);
 
 %% Exercise 2 Questions
-% The system behaves as expected: With an input step size of 1, it approaches a final output change of 0.5 and takes one second to reach about 63.2% of this final output change.
+% The system behaves as expected. With an input step size of 1, it approaches a final output change of 0.5 and takes about one second to reach 63.2% of this final output change.
 % 
 % To produce a steady-state response twice as great in the same time frame, the steady-state gain can be multiplied by 2.
 % 
@@ -413,8 +415,8 @@ xlim([0, 60]);
 
 
 %% Exercise 3
-% Second-order systems with varying steady-state gains, damping ratios, and
-% natural frequencies.
+% Second-order systems with a steady-state gain of 3 and varying damping
+% ratios and natural frequencies.
 
 figure;
 
@@ -449,9 +451,7 @@ ylabel('Response (units)');
 xlim([0, 4]);
 
 %% Exercise 3 Questions
-% Doubling the damping coefficient causes the step response to approach steady-state twice as quickly.
-% 
-% The percent overshoot decreases compared to the original system REPLACE_WITH_DASH_DASH it decreases from 62% to 37%.
+% Doubling the damping coefficient causes the step response to approach steady-state twice as quickly. The percent overshoot decreases compared to the original system REPLACE_WITH_DASH_DASH it decreases from 62% to 37%.
 % 
 % Doubling the oscillation frequency causes the step response to both oscillate at twice the frequency and, as a side-effect, also approach steady-state twice as quickly. The percent overshoot remains the same as the original system.
 
@@ -486,7 +486,7 @@ xlim([0, 30]);
 %% Exercise 4 Questions
 % The steady-state gain of the system is the product of the gains of each first-order system.
 % 
-% The second-order system constituted by the two first-order systems in series behaves in a similar manner to a first-order system. The response of the system does not oscillate and is similar to a first-order step response.% The two first-order systems in series results in a step-response. This
+% The second-order system constituted by the two first-order systems in series behaves in a similar manner to a first-order system. The response of the system does not oscillate and is similar to a first-order step response.
 % 
 % The response of the two different first-order systems in series resembles a first-order response more than that of the same first-order systems in series. The step-response has a gain equal to the product of the gains of each subsystem and a time constant equal to the sum of the time constants of each subsystem.
 
@@ -500,7 +500,7 @@ figure;
 sim('Lab1_5');
 
 % PID Controller
-subplot(4, 1, 1);
+subplot(4, 1, 1);                       % 4 rows, one column, first graph
 plot(tout, simout(:, 1), 'LineWidth', 2);
 title('PID Controller');
 xlabel('Time(s)');
@@ -508,21 +508,21 @@ ylabel('Response (units)');
 ylim([0 10]);
 
 % Proportional Control
-subplot(4, 1, 2);
+subplot(4, 1, 2);                       % 4 rows, one column, second graph
 plot(tout, simout(:, 2), 'LineWidth', 2);
 title('Proportional Control');
 xlabel('Time(s)');
 ylabel('Response (units)');
 
 % Integral Control
-subplot(4, 1, 3);
+subplot(4, 1, 3);                       % 4 rows, one column, third graph
 plot(tout, simout(:, 3), 'LineWidth', 2);
 title('Integral Control');
 xlabel('Time(s)');
 ylabel('Response (units)');
 
 % Derivative Control
-subplot(4, 1, 4);
+subplot(4, 1, 4);                       % 4 rows, one column, fourth graph
 plot(tout, simout(:, 4), 'LineWidth', 2);
 title('Derivative Control');
 xlabel({'Time (s)'
@@ -630,7 +630,7 @@ figure;
 sim('Lab1_6D');
 
 % Step 1
-subplot(2, 1, 1);
+subplot(2, 1, 1);                       % 2 rows, one column, first graph
 plot(tout, simout, 'LineWidth', 2);
 title('Proportional-Only Control of a Tank: <1s Time Constant, Step 1');
 xlabel('Time (s)');
@@ -638,7 +638,7 @@ ylabel('Height (in)');
 xlim([0, 6]);
 
 % Step 2
-subplot(2, 1, 2);
+subplot(2, 1, 2);                       % 2 rows, one column, second graph
 plot(tout, simout, 'LineWidth', 2);
 title('Proportional-Only Control of a Tank: <1s Time Constant, Step 2');
 xlabel({'Time (s)'
@@ -707,7 +707,7 @@ xlim([0, 120]);
 figure;
 
 sim('Lab1_7A');
-subplot(2, 1, 1);
+subplot(2, 1, 1);                       % 2 rows, one column, first graph
 plot(tout, simout, 'LineWidth', 2);
 title('Proportional-Only Control of a Tank: Actual Levels, 19 in');
 xlabel('Time (s)');
@@ -715,7 +715,7 @@ ylabel('Height (in)');
 xlim([0, 30]);
 
 sim('Lab1_7B');
-subplot(2, 1, 2);
+subplot(2, 1, 2);                       % 2 rows, one column, second graph
 plot(tout, simout, 'LineWidth', 2);
 title('Proportional-Only Control of a Tank: Actual Levels, 17 in');
 xlabel({'Time (s)'
@@ -742,7 +742,7 @@ figure;
 
 % Kp = 1
 sim('Lab1_8A');
-subplot(2, 1, 1);
+subplot(2, 1, 1);                       % 2 rows, one column, first graph
 plot(tout, simout, 'LineWidth', 2);
 title('Proportional-Only Control of a Second-Order System: Kp = 1');
 xlabel('Time (s)');
@@ -751,7 +751,7 @@ xlim([0.75, 1.5]);
 
 % Kp = 2
 sim('Lab1_8B');
-subplot(2, 1, 2);
+subplot(2, 1, 2);                       % 2 rows, one column, second graph
 plot(tout, simout, 'LineWidth', 2);
 title('Proportional-Only Control of a Second-Order System: Kp = 2');
 xlabel({'Time (s)'
