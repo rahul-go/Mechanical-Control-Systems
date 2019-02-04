@@ -167,6 +167,8 @@ xlim([0, 30]);
 % The second-order system constituted by the two first-order systems in series behaves in a similar manner to a first-order system. The response of the system does not oscillate and is similar to a first-order step response.
 % 
 % The response of the two different first-order systems in series resembles a first-order response more than that of the same first-order systems in series. The step-response has a gain equal to the product of the gains of each subsystem and a time constant equal to the sum of the time constants of each subsystem.
+% 
+% In essence, a system of two identical first-order systems in series is a critically damped second-order system, and a system of two different first-order systems in series is a an overdamped second-order system.
 
 
 
@@ -194,3 +196,30 @@ legend('Damping Ratio = 1', 'Damping Ratio = 0.7', ...
        'Damping Ratio = 0.2', 'Damping Ratio = 0', 'Damping Ratio = -0.5');
 xlim([1 4]);
 ylim([-5 40]);
+
+
+
+%% Problem 8
+
+figure;
+
+% Automobile Suspension System: Undamped
+subplot(2, 1, 1);                       % 2 rows, one column, second graph
+sim('HW4_8A');
+plot(tout, simout, 'LineWidth', 2);
+title('Automobile Suspension System: Undamped');
+xlabel('Time(s)');
+ylabel('Response (units)');
+xlim([0, 2]);
+
+% Automobile Suspension System: Damped
+subplot(2, 1, 2);                       % 2 rows, one column, second graph
+sim('HW4_8B');
+plot(tout, simout, 'LineWidth', 2);
+title('Automobile Suspension System: Damped');
+xlabel({'Time (s)'
+        ''
+        % Figure label
+        '\bfFigure 5: \rmAutomobile Suspension Systems'});
+ylabel('Response (units)');
+xlim([0, 2]);

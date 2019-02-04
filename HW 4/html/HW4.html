@@ -1,0 +1,448 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>HW4</title><meta name="generator" content="MATLAB 9.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2019-01-30"><meta name="DC.source" content="HW4.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#1">ME 422 HW 4</a></li><li><a href="#2">Problem 1</a></li><li><a href="#3">Problem 1 Questions</a></li><li><a href="#4">Problem 2</a></li><li><a href="#5">Problem 3</a></li><li><a href="#6">Problem 3 Questions</a></li><li><a href="#7">Problem 4</a></li><li><a href="#8">Problem 4 Questions</a></li><li><a href="#9">Problem 5</a></li><li><a href="#10">Problem 5 Questions</a></li><li><a href="#11">Problem 6</a></li><li><a href="#12">Problem 8</a></li></ul></div><h2 id="1">ME 422 HW 4</h2><p>Rahul Goyal</p><p>January 30, 2019</p><pre class="codeinput"><span class="comment">% Reset</span>
+clc;
+clear <span class="string">all</span>;
+close <span class="string">all</span>;
+</pre><h2 id="2">Problem 1</h2><p>First-order systems with varying settling times and steady-state gains.</p><pre class="codeinput">figure;
+sim(<span class="string">'HW4_1'</span>);
+plot(tout, simout, <span class="string">'LineWidth'</span>, 2);
+title(<span class="string">'Time Constant = 1s | Gain = 0.5'</span>);
+xlabel({<span class="string">'Time (s)'</span>
+        <span class="string">''</span>
+        <span class="comment">% Figure label</span>
+        <span class="string">'\bfFigure 1: \rmFirst-Order System'</span>});
+ylabel(<span class="string">'Response (units)'</span>);
+xlim([0, 6]);
+</pre><img vspace="5" hspace="5" src="HW4_01.png" alt=""> <h2 id="3">Problem 1 Questions</h2><p>The system behaves as expected: With an input step size of 1, it approaches a final output change of 0.5 and takes about one second to reach 63.2% of this final output change.</p><p>To produce a steady-state response twice as great in the same time frame, the steady-state gain can be multiplied by 2.</p><p>To accelerate the system such that it responds twice as quickly as the original system, the time constant can be divided by 2.</p><h2 id="4">Problem 2</h2><p>First-order systems with varying settling times and steady-state gains.</p><pre class="codeinput">figure;
+
+<span class="comment">% Time Constant = 0.2s | Gain = 8</span>
+sim(<span class="string">'HW4_2A'</span>);
+subplot(2, 1, 1);                       <span class="comment">% 2 rows, one column, first graph</span>
+plot(tout, simout, <span class="string">'LineWidth'</span>, 2);
+title(<span class="string">'Time Constant = 0.2s | Gain = 8'</span>);
+xlabel(<span class="string">'Time (s)'</span>);
+ylabel(<span class="string">'Response (units)'</span>);
+xlim([0, 3]);
+
+<span class="comment">% Time Constant = 14.5s | Gain = -0.7</span>
+sim(<span class="string">'HW4_2B'</span>);
+subplot(2, 1, 2);                       <span class="comment">% 2 rows, one column, second graph</span>
+plot(tout, simout, <span class="string">'LineWidth'</span>, 2);
+title(<span class="string">'Time Constant = 14.5s | Gain = -0.7'</span>);
+xlabel({<span class="string">'Time (s)'</span>
+        <span class="string">''</span>
+        <span class="comment">% Figure label</span>
+        <span class="string">'\bfFigure 2: \rmFirst-Order System'</span>});
+ylabel(<span class="string">'Response (units)'</span>);
+xlim([0, 60]);
+</pre><img vspace="5" hspace="5" src="HW4_02.png" alt=""> <h2 id="5">Problem 3</h2><p>Second-order system with a steady-state gain of 3, damping ratio of 0.15 and natural frequency of 1 Hz.</p><pre class="codeinput">figure;
+sim(<span class="string">'HW4_3'</span>);
+plot(tout, simout, <span class="string">'LineWidth'</span>, 2);
+title(<span class="string">'Damping Ratio = 0.15 | Frequency = 1.0 Hz'</span>);
+xlabel({<span class="string">'Time (s)'</span>
+        <span class="string">''</span>
+        <span class="comment">% Figure label</span>
+        <span class="string">'\bfFigure 3: \rmSecond-Order Systems'</span>});
+ylabel(<span class="string">'Response (units)'</span>);
+xlim([0, 7]);
+</pre><img vspace="5" hspace="5" src="HW4_03.png" alt=""> <h2 id="6">Problem 3 Questions</h2><p>The system behaves as expected. With a steady-state gain of 3, damping ratio of 0.15, and natural frequency of 1 Hz, the system response matches the hand calculations, which expect a steady-state gain of 3, oscillation frequency of 0.989 Hz, expected overshoot of 62.1%.</p><h2 id="7">Problem 4</h2><p>Second-order systems with a steady-state gain of 3 and varying input steps, damping ratios, and oscillation frequencies.</p><pre class="codeinput">figure;
+
+<span class="comment">% Steady-State Gain = 3 | Damping Ratio = 0.196 | Natural Frequency = 4.89 rad/s</span>
+sim(<span class="string">'HW4_4A'</span>);
+subplot(4, 1, 1);                       <span class="comment">% 2 rows, one column, first graph</span>
+plot(tout, simout, <span class="string">'LineWidth'</span>, 2);
+title(<span class="string">'Steady-State Gain = 3 | Damping Ratio = 0.196 | Natural Frequency = 4.89 rad/s'</span>);
+xlabel(<span class="string">'Time(s)'</span>);
+ylabel(<span class="string">'Response (units)'</span>);
+xlim([0, 4.5]);
+
+<span class="comment">% Double Input Step</span>
+sim(<span class="string">'HW4_4B'</span>);
+subplot(4, 1, 2);                       <span class="comment">% 4 rows, one column, second graph</span>
+plot(tout, simout, <span class="string">'LineWidth'</span>, 2);
+title(<span class="string">'Double Input Step'</span>);
+xlabel(<span class="string">'Time (s)'</span>);
+ylabel(<span class="string">'Response (units)'</span>);
+xlim([0, 4.5]);
+
+<span class="comment">% Double Damping Ratio</span>
+sim(<span class="string">'HW4_4C'</span>);
+subplot(4, 1, 3);                       <span class="comment">% 4 rows, one column, third graph</span>
+plot(tout, simout, <span class="string">'LineWidth'</span>, 2);
+title(<span class="string">'Double Damping Ratio'</span>);
+xlabel(<span class="string">'Time (s)'</span>);
+ylabel(<span class="string">'Response (units)'</span>);
+xlim([0, 4.5]);
+
+<span class="comment">% Double Oscillation Frequency</span>
+sim(<span class="string">'HW4_4D'</span>);
+subplot(4, 1, 4);                       <span class="comment">% 4 rows, one column, fourth graph</span>
+plot(tout, simout, <span class="string">'LineWidth'</span>, 2);
+title(<span class="string">'Double Oscillation Frequency'</span>);
+xlabel({<span class="string">'Time (s)'</span>
+        <span class="string">''</span>
+        <span class="comment">% Figure label</span>
+        <span class="string">'\bfFigure 4: \rmSecond-Order Systems'</span>});
+ylabel(<span class="string">'Response (units)'</span>);
+xlim([0, 4.5]);
+</pre><img vspace="5" hspace="5" src="HW4_04.png" alt=""> <h2 id="8">Problem 4 Questions</h2><p>The unit step response in Figure 4.3 has a steady-state gain of 3, overshoot of 53.3%, oscillation frequency of 4.83 rad/s, damping ratio of 0.196, and natural frequency of 4.93 rad/s. A simulation using these parameters in Simulink produces a unit step response similar to that of Figure 4.3.</p><p>Doubling the size of the input step causes the magnitude of the response to double.</p><p>Doubling the damping coefficient causes the step response to approach steady-state twice as quickly. The percent overshoot decreases compared to the original system -- it decreases from 55% to 26%.</p><p>Doubling the oscillation frequency causes the step response to both oscillate at twice the frequency and, as a side-effect, also approach steady-state twice as quickly. The percent overshoot remains the same as the original system.</p><h2 id="9">Problem 5</h2><p>Systems with two first-order systems in series.</p><pre class="codeinput">figure;
+
+<span class="comment">% Sys1Gain = 2, Sys1TC = 1s | Sys2Gain = 2, Sys2TC = 1s</span>
+sim(<span class="string">'HW4_5A'</span>);
+subplot(2, 1, 1);                       <span class="comment">% 2 rows, one column, first graph</span>
+plot(tout, simout, <span class="string">'LineWidth'</span>, 2);
+title(<span class="string">'KSS1 = 2, TC1 = 1s | KSS2 = 2, TC2 = 1s'</span>);
+xlabel(<span class="string">'Time(s)'</span>);
+ylabel(<span class="string">'Response (units)'</span>);
+xlim([0, 10]);
+
+<span class="comment">% Sys1Gain = 0.1, Sys1TC = 0.1s | Sys2Gain = 10, Sys2TC = 5s</span>
+sim(<span class="string">'HW4_5B'</span>);
+subplot(2, 1, 2);                       <span class="comment">% 2 rows, one column, second graph</span>
+plot(tout, simout, <span class="string">'LineWidth'</span>, 2);
+title(<span class="string">'KSS1 = 0.1, TC1 = 0.1s | KSS2 = 10, TC2 = 5s'</span>);
+xlabel({<span class="string">'Time (s)'</span>
+        <span class="string">''</span>
+        <span class="comment">% Figure label</span>
+        <span class="string">'\bfFigure 5: \rmTwo First-Order Systems in Series'</span>});
+ylabel(<span class="string">'Response (units)'</span>);
+xlim([0, 30]);
+</pre><img vspace="5" hspace="5" src="HW4_05.png" alt=""> <h2 id="10">Problem 5 Questions</h2><p>The steady-state gain of the system is the product of the gains of each first-order system.</p><p>The second-order system constituted by the two first-order systems in series behaves in a similar manner to a first-order system. The response of the system does not oscillate and is similar to a first-order step response.</p><p>The response of the two different first-order systems in series resembles a first-order response more than that of the same first-order systems in series. The step-response has a gain equal to the product of the gains of each subsystem and a time constant equal to the sum of the time constants of each subsystem.</p><p>In essence, a system of two identical first-order systems in series is a critically damped second-order system, and a system of two different first-order systems in series is a an overdamped second-order system.</p><h2 id="11">Problem 6</h2><p>Second-order systems with varying damping ratios.</p><pre class="codeinput">figure;
+hold <span class="string">on</span>;
+sim(<span class="string">'HW4_6A'</span>);
+plot(tout, simout, <span class="string">'LineWidth'</span>, 2);
+sim(<span class="string">'HW4_6B'</span>);
+plot(tout, simout, <span class="string">'LineWidth'</span>, 2);
+sim(<span class="string">'HW4_6C'</span>);
+plot(tout, simout, <span class="string">'LineWidth'</span>, 2);
+sim(<span class="string">'HW4_6D'</span>);
+plot(tout, simout, <span class="string">'LineWidth'</span>, 2);
+sim(<span class="string">'HW4_6E'</span>);
+plot(tout, simout, <span class="string">'LineWidth'</span>, 2);
+title(<span class="string">'Second-Order Systems: The Effect of Damping Ratio'</span>);
+xlabel({<span class="string">'Time (s)'</span>
+        <span class="string">''</span>
+        <span class="comment">% Figure label</span>
+        <span class="string">'\bfFigure 6: \rmSecond-Order Systems: The Effect of Damping Ratio'</span>});
+legend(<span class="string">'Damping Ratio = 1'</span>, <span class="string">'Damping Ratio = 0.7'</span>, <span class="keyword">...</span>
+       <span class="string">'Damping Ratio = 0.2'</span>, <span class="string">'Damping Ratio = 0'</span>, <span class="string">'Damping Ratio = -0.5'</span>);
+xlim([1 4]);
+ylim([-5 40]);
+</pre><img vspace="5" hspace="5" src="HW4_06.png" alt=""> <h2 id="12">Problem 8</h2><pre class="codeinput">figure;
+
+<span class="comment">% Automobile Suspension System: Undamped</span>
+subplot(2, 1, 1);                       <span class="comment">% 2 rows, one column, second graph</span>
+sim(<span class="string">'HW4_8A'</span>);
+plot(tout, simout, <span class="string">'LineWidth'</span>, 2);
+title(<span class="string">'Automobile Suspension System: Undamped'</span>);
+xlabel(<span class="string">'Time(s)'</span>);
+ylabel(<span class="string">'Response (units)'</span>);
+xlim([0, 2]);
+
+<span class="comment">% Automobile Suspension System: Damped</span>
+subplot(2, 1, 2);                       <span class="comment">% 2 rows, one column, second graph</span>
+sim(<span class="string">'HW4_8B'</span>);
+plot(tout, simout, <span class="string">'LineWidth'</span>, 2);
+title(<span class="string">'Automobile Suspension System: Damped'</span>);
+xlabel({<span class="string">'Time (s)'</span>
+        <span class="string">''</span>
+        <span class="comment">% Figure label</span>
+        <span class="string">'\bfFigure 5: \rmAutomobile Suspension Systems'</span>});
+ylabel(<span class="string">'Response (units)'</span>);
+xlim([0, 2]);
+</pre><img vspace="5" hspace="5" src="HW4_07.png" alt=""> <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2018a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% ME 422 HW 4
+% Rahul Goyal
+%
+% January 30, 2019
+
+% Reset
+clc;
+clear all;
+close all;
+
+%% Problem 1
+% First-order systems with varying settling times and steady-state gains.
+
+figure;
+sim('HW4_1');
+plot(tout, simout, 'LineWidth', 2);
+title('Time Constant = 1s | Gain = 0.5');
+xlabel({'Time (s)'
+        ''
+        % Figure label
+        '\bfFigure 1: \rmFirst-Order System'});
+ylabel('Response (units)');
+xlim([0, 6]);
+
+%% Problem 1 Questions
+% The system behaves as expected: With an input step size of 1, it approaches a final output change of 0.5 and takes about one second to reach 63.2% of this final output change.
+% 
+% To produce a steady-state response twice as great in the same time frame, the steady-state gain can be multiplied by 2.
+% 
+% To accelerate the system such that it responds twice as quickly as the original system, the time constant can be divided by 2.
+
+
+
+%% Problem 2
+% First-order systems with varying settling times and steady-state gains.
+
+figure;
+
+% Time Constant = 0.2s | Gain = 8
+sim('HW4_2A');
+subplot(2, 1, 1);                       % 2 rows, one column, first graph
+plot(tout, simout, 'LineWidth', 2);
+title('Time Constant = 0.2s | Gain = 8');
+xlabel('Time (s)');
+ylabel('Response (units)');
+xlim([0, 3]);
+
+% Time Constant = 14.5s | Gain = -0.7
+sim('HW4_2B');
+subplot(2, 1, 2);                       % 2 rows, one column, second graph
+plot(tout, simout, 'LineWidth', 2);
+title('Time Constant = 14.5s | Gain = -0.7');
+xlabel({'Time (s)'
+        ''
+        % Figure label
+        '\bfFigure 2: \rmFirst-Order System'});
+ylabel('Response (units)');
+xlim([0, 60]);
+
+
+
+%% Problem 3
+% Second-order system with a steady-state gain of 3, damping ratio of 0.15
+% and natural frequency of 1 Hz.
+
+figure;
+sim('HW4_3');
+plot(tout, simout, 'LineWidth', 2);
+title('Damping Ratio = 0.15 | Frequency = 1.0 Hz');
+xlabel({'Time (s)'
+        ''
+        % Figure label
+        '\bfFigure 3: \rmSecond-Order Systems'});
+ylabel('Response (units)');
+xlim([0, 7]);
+
+%% Problem 3 Questions
+% The system behaves as expected. With a steady-state gain of 3, damping ratio of 0.15, and natural frequency of 1 Hz, the system response matches the hand calculations, which expect a steady-state gain of 3, oscillation frequency of 0.989 Hz, expected overshoot of 62.1%.
+
+
+
+%% Problem 4
+% Second-order systems with a steady-state gain of 3 and varying input
+% steps, damping ratios, and oscillation frequencies.
+
+figure;
+
+% Steady-State Gain = 3 | Damping Ratio = 0.196 | Natural Frequency = 4.89 rad/s
+sim('HW4_4A');
+subplot(4, 1, 1);                       % 2 rows, one column, first graph
+plot(tout, simout, 'LineWidth', 2);
+title('Steady-State Gain = 3 | Damping Ratio = 0.196 | Natural Frequency = 4.89 rad/s');
+xlabel('Time(s)');
+ylabel('Response (units)');
+xlim([0, 4.5]);
+
+% Double Input Step
+sim('HW4_4B');
+subplot(4, 1, 2);                       % 4 rows, one column, second graph
+plot(tout, simout, 'LineWidth', 2);
+title('Double Input Step');
+xlabel('Time (s)');
+ylabel('Response (units)');
+xlim([0, 4.5]);
+
+% Double Damping Ratio
+sim('HW4_4C');
+subplot(4, 1, 3);                       % 4 rows, one column, third graph
+plot(tout, simout, 'LineWidth', 2);
+title('Double Damping Ratio');
+xlabel('Time (s)');
+ylabel('Response (units)');
+xlim([0, 4.5]);
+
+% Double Oscillation Frequency
+sim('HW4_4D');
+subplot(4, 1, 4);                       % 4 rows, one column, fourth graph
+plot(tout, simout, 'LineWidth', 2);
+title('Double Oscillation Frequency');
+xlabel({'Time (s)'
+        ''
+        % Figure label
+        '\bfFigure 4: \rmSecond-Order Systems'});
+ylabel('Response (units)');
+xlim([0, 4.5]);
+
+%% Problem 4 Questions
+% The unit step response in Figure 4.3 has a steady-state gain of 3, overshoot of 53.3%, oscillation frequency of 4.83 rad/s, damping ratio of 0.196, and natural frequency of 4.93 rad/s. A simulation using these parameters in Simulink produces a unit step response similar to that of Figure 4.3.
+% 
+% Doubling the size of the input step causes the magnitude of the response to double.
+% 
+% Doubling the damping coefficient causes the step response to approach steady-state twice as quickly. The percent overshoot decreases compared to the original system REPLACE_WITH_DASH_DASH it decreases from 55% to 26%.
+% 
+% Doubling the oscillation frequency causes the step response to both oscillate at twice the frequency and, as a side-effect, also approach steady-state twice as quickly. The percent overshoot remains the same as the original system.
+
+
+
+%% Problem 5
+% Systems with two first-order systems in series.
+
+figure;
+
+% Sys1Gain = 2, Sys1TC = 1s | Sys2Gain = 2, Sys2TC = 1s
+sim('HW4_5A');
+subplot(2, 1, 1);                       % 2 rows, one column, first graph
+plot(tout, simout, 'LineWidth', 2);
+title('KSS1 = 2, TC1 = 1s | KSS2 = 2, TC2 = 1s');
+xlabel('Time(s)');
+ylabel('Response (units)');
+xlim([0, 10]);
+
+% Sys1Gain = 0.1, Sys1TC = 0.1s | Sys2Gain = 10, Sys2TC = 5s
+sim('HW4_5B');
+subplot(2, 1, 2);                       % 2 rows, one column, second graph
+plot(tout, simout, 'LineWidth', 2);
+title('KSS1 = 0.1, TC1 = 0.1s | KSS2 = 10, TC2 = 5s');
+xlabel({'Time (s)'
+        ''
+        % Figure label
+        '\bfFigure 5: \rmTwo First-Order Systems in Series'});
+ylabel('Response (units)');
+xlim([0, 30]);
+
+%% Problem 5 Questions
+% The steady-state gain of the system is the product of the gains of each first-order system.
+% 
+% The second-order system constituted by the two first-order systems in series behaves in a similar manner to a first-order system. The response of the system does not oscillate and is similar to a first-order step response.
+% 
+% The response of the two different first-order systems in series resembles a first-order response more than that of the same first-order systems in series. The step-response has a gain equal to the product of the gains of each subsystem and a time constant equal to the sum of the time constants of each subsystem.
+% 
+% In essence, a system of two identical first-order systems in series is a critically damped second-order system, and a system of two different first-order systems in series is a an overdamped second-order system.
+
+
+
+%% Problem 6
+% Second-order systems with varying damping ratios.
+
+figure;
+hold on;
+sim('HW4_6A');
+plot(tout, simout, 'LineWidth', 2);
+sim('HW4_6B');
+plot(tout, simout, 'LineWidth', 2);
+sim('HW4_6C');
+plot(tout, simout, 'LineWidth', 2);
+sim('HW4_6D');
+plot(tout, simout, 'LineWidth', 2);
+sim('HW4_6E');
+plot(tout, simout, 'LineWidth', 2);
+title('Second-Order Systems: The Effect of Damping Ratio');
+xlabel({'Time (s)'
+        ''
+        % Figure label
+        '\bfFigure 6: \rmSecond-Order Systems: The Effect of Damping Ratio'});
+legend('Damping Ratio = 1', 'Damping Ratio = 0.7', ...
+       'Damping Ratio = 0.2', 'Damping Ratio = 0', 'Damping Ratio = -0.5');
+xlim([1 4]);
+ylim([-5 40]);
+
+
+
+%% Problem 8
+
+figure;
+
+% Automobile Suspension System: Undamped
+subplot(2, 1, 1);                       % 2 rows, one column, second graph
+sim('HW4_8A');
+plot(tout, simout, 'LineWidth', 2);
+title('Automobile Suspension System: Undamped');
+xlabel('Time(s)');
+ylabel('Response (units)');
+xlim([0, 2]);
+
+% Automobile Suspension System: Damped
+subplot(2, 1, 2);                       % 2 rows, one column, second graph
+sim('HW4_8B');
+plot(tout, simout, 'LineWidth', 2);
+title('Automobile Suspension System: Damped');
+xlabel({'Time (s)'
+        ''
+        % Figure label
+        '\bfFigure 5: \rmAutomobile Suspension Systems'});
+ylabel('Response (units)');
+xlim([0, 2]);
+##### SOURCE END #####
+--></body></html>
