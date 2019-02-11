@@ -41,7 +41,6 @@ legend('Experimental Data', 'Linear Simulation', ...
        'Nonlinear Simulation', 'Nonlinear Simulation, Tuned', ...
        'Location', 'southeast');
 xlim([0, 4]);
-ylim([0, 100]);
 
 
 
