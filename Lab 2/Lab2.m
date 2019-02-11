@@ -60,7 +60,7 @@ plot(tout, simout, 'LineWidth', 2);
 sim('OpenLoopNonlinear');
 plot(tout, simout, 'LineWidth', 2);
 % Plot labeling
-title('Open-Loop Motomatric Step Response');
+title('Open-Loop Motomatic Step Response');
 xlabel({'Time (s)'
         ''
         % Figure label
@@ -69,6 +69,7 @@ ylabel('Angular Velocity (deg/s)');
 legend('Experimental Data', 'Linear Simulation', ...
        'Nonlinear Simulation', 'Location', 'southeast')
 xlim([0, 4]);
+ylim([0, 100]);
 
 K_pot = 0.0851;
 
@@ -76,13 +77,37 @@ K_pot = 0.0851;
 figure;
 load('MotoMatic/stepresponse_rf5k.mat');
 plot(MotoOpenLoop(:, 1)-1.18, MotoOpenLoop(:, 2)/K_pot, 'LineWidth', 2);
+% Plot labeling
+title('Closed-Loop Motomatic Step Response, Rf = 5k Ohms');
+xlabel({'Time (s)'
+        ''
+        % Figure label
+        '\bfFigure 3: \rmClosed-Loop Motomatic Step Response, Rf = 5k Ohms'});
+ylabel('Angular Position (deg)');
+xlim([0, 3]);
 
 % Rf = 10k Ohms
 figure;
 load('MotoMatic/stepresponse_rf10k.mat');
 plot(MotoOpenLoop(:, 1)-1.10, MotoOpenLoop(:, 2)/K_pot, 'LineWidth', 2);
+% Plot labeling
+title('Closed-Loop Motomatic Step Response, Rf = 10k Ohms');
+xlabel({'Time (s)'
+        ''
+        % Figure label
+        '\bfFigure 4: \rmClosed-Loop Motomatic Step Response, Rf = 10k Ohms'});
+ylabel('Angular Position (deg)');
+xlim([0, 3]);
 
 % Rf = 20k Ohms
 figure;
 load('MotoMatic/stepresponse_rf20k.mat');
 plot(MotoOpenLoop(:, 1)-1.03, MotoOpenLoop(:, 2)/K_pot, 'LineWidth', 2);
+% Plot labeling
+title('Closed-Loop Motomatic Step Response, Rf = 20k Ohms');
+xlabel({'Time (s)'
+        ''
+        % Figure label
+        '\bfFigure 5: \rmClosed-Loop Motomatic Step Response, Rf = 20k Ohms'});
+ylabel('Angular Position (deg)');
+xlim([0, 3]);
