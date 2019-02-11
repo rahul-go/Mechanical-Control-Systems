@@ -99,7 +99,7 @@ SHARED_SRC_DIR       :=
 SHARED_BIN_DIR       := 
 SHARED_LIB           := 
 TARGET_LANG_EXT      := c
-OPTIMIZATION_FLAGS   := -O4 -O4 -O4 -O4 -O4 -O4
+OPTIMIZATION_FLAGS   := -O4 -O4 -O4 -O4 -O4 -O4 -O4 -O4 -O4 -O4 -O4 -O4 -O4 -O4 -O4 -O4 -O4 -O4 -O4 -O4
 ADDITIONAL_LDFLAGS   := 
 DEFINES_CUSTOM       := 
 
@@ -164,7 +164,7 @@ REQ_INCLUDES := $(MATLAB_ROOT)/simulink/include;$(MATLAB_ROOT)/extern/include;$(
 REQ_INCLUDES += ;$(MATLAB_ROOT)/toolbox/shared/can/src/scanutil;$(SLDRTDIR)/src
 
 # additional includes
-REQ_INCLUDES += ;C:/Users/melab2/Desktop/MotoMatic;C:/Users/melab2/Desktop/MotoMatic/DCServoDAC_sldrt_win64;$(MATLAB_ROOT)/rtw/c/src/ext_mode/common
+REQ_INCLUDES += ;C:/Users/melab2/Desktop/LAB2~1/MOTOMA~1;C:/Users/melab2/Desktop/LAB2~1/MOTOMA~1/DCServoDAC_sldrt_win64;$(MATLAB_ROOT)/rtw/c/src/ext_mode/common
 
 # shared includes
 ifneq ($(SHARED_SRC_DIR),)
