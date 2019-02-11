@@ -4,11 +4,12 @@ close all;
 figure;
 hold on;
 
+
+
 %% Open-Loop Step Response
 
-load('stepresponse.mat');
-% plot(MotoOpenLoop(:, 1), MotoOpenLoop(:, 2), 'LineWidth', 2);
-% title('Experimental Step Response');
+load('MotoMatic/stepresponse.mat');
+plot(MotoOpenLoop(:, 1)-0.53, MotoOpenLoop(:, 2)*6, 'LineWidth', 2);
 
 low = 0.1514;
 high1 = 1.816;
@@ -23,7 +24,10 @@ time2 = 1.83;
 
 tc = time2 - time1;
 
+
+
 %% Position vs. Time (Saturated at 200 deg)
+
 K_pot = 0.0851;
 load('stepresponse_rf5k.mat');
 plot(MotoOpenLoop(:, 1)-1.18, MotoOpenLoop(:, 2)/K_pot, 'LineWidth', 2);
