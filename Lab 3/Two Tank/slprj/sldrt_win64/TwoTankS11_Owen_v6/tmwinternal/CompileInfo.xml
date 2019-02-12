@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MF0 version="1.1">
+  <ModelRefInfoRepo.ModelRefInfoRoot type="ModelRefInfoRepo.ModelRefInfoRoot" uuid="c83daac8-6a3d-4b6d-8c86-a5dadc4c19ec">
+    <dataTransferInfos>AAFJTQAAAAAOAAAAOAAAAAYAAAAIAAAAAgAAAAAAAAAFAAAACAAAAAAAAAABAAAAAQAAAAAAAAAFAAQAAQAAAAEAAAAAAAAA</dataTransferInfos>
+    <hasBwsAccessed>true</hasBwsAccessed>
+    <hasBwsAccessedByAnyModel>true</hasBwsAccessedByAnyModel>
+    <inportSignalObjects>AAFJTQAAAAAOAAAAKAAAAAYAAAAIAAAAAQAAAAAAAAAFAAAACAAAAAEAAAAAAAAAAQAAAAAAAAA=</inportSignalObjects>
+    <needAbsoluteTimeForNonLoggingPurpose>true</needAbsoluteTimeForNonLoggingPurpose>
+    <outportSignalObjects>AAFJTQAAAAAOAAAAKAAAAAYAAAAIAAAAAQAAAAAAAAAFAAAACAAAAAEAAAAAAAAAAQAAAAAAAAA=</outportSignalObjects>
+    <timingAndTaskingRegistry></timingAndTaskingRegistry>
+    <FMUBlockMap type="ModelRefInfoRepo.FMUBlockInfo" uuid="909550a6-642f-4d11-a0cb-08094b61b20e"/>
+    <periodicEventPortUnsupportedBlockInfo type="ModelRefInfoRepo.PeriodicEventPortUnsupportedBlockInfo" uuid="d974313d-655a-4515-8b2b-c438f5e12adf">
+      <deterministicRTBs>TwoTankS11_Owen_v6/Store data every second</deterministicRTBs>
+    </periodicEventPortUnsupportedBlockInfo>
+    <simulinkFunctions type="ModelRefInfoRepo.SimulinkFunctions" uuid="b5b41e91-355f-4ee3-a42c-acd5d710d364">
+      <compSimulinkFunctionCatalog>AAFJTQAAAAAOAAAA0AAAAAYAAAAIAAAAAgAAAAAAAAAFAAAACAAAAAEAAAABAAAAAQAAAAAAAAAFAAQAEQAAAAEAAAAiAAAAQ29tcEZ1bmN0aW9ucwAAAABDb21wU2VydmljZVBvcnRzAAAAAAAAAA4AAAAwAAAABgAAAAgAAAAGAAAAAAAAAAUAAAAIAAAAAAAAAAAAAAABAAAAAAAAAAkAAAAAAAAADgAAADAAAAAGAAAACAAAAAYAAAAAAAAABQAAAAgAAAAAAAAAAAAAAAEAAAAAAAAACQAAAAAAAAA=</compSimulinkFunctionCatalog>
+      <variantSimulinkFunctions type="ModelRefInfoRepo.VariantSimulinkFunctions" uuid="635ce59e-f64a-4b0c-b239-7450e6fb0070"/>
+    </simulinkFunctions>
+    <stateWriterToOwnerMap type="ModelRefInfoRepo.StateWriterInfo" uuid="a7f47349-fee5-4c77-825e-1b6cadb19049"/>
+    <unionTsContainedTs type="ModelRefInfoRepo.UnionTsContainedTsInfo" uuid="4b0ac0d7-8d72-4858-b70f-aef4cec93e3f"/>
+  </ModelRefInfoRepo.ModelRefInfoRoot>
+</MF0>
