@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.79"
+    ComputedModelVersion    "1.81"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -91,7 +91,7 @@ Model {
 	LoadSaveID		"0"
 	Extents			[1242.0, 819.0]
 	ZoomFactor		[0.8]
-	Offset			[-122.2714285714278, -44.780952380953295]
+	Offset			[-178.55476190476065, -89.680952380953158]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -125,9 +125,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "melab2"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Feb 11 17:23:55 2019"
-  RTWModifiedTimeStamp	  471806608
-  ModelVersionFormat	  "1.%<AutoIncrement:79>"
+  LastModifiedDate	  "Mon Feb 11 18:07:09 2019"
+  RTWModifiedTimeStamp	  471809222
+  ModelVersionFormat	  "1.%<AutoIncrement:81>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "none"
@@ -784,7 +784,7 @@ Model {
 		Type			"Cell"
 		Dimension		21
 		Cell			"IncludeMdlTerminateFcn"
-		Cell			"ExtMode"
+		Cell			"ExtModeMexFile"
 		Cell			"SuppressErrorStatus"
 		Cell			"ERTCustomFileBanners"
 		Cell			"GenerateSampleERTMain"
@@ -799,10 +799,10 @@ Model {
 		Cell			"SupportNonInlinedSFcns"
 		Cell			"RemoveDisableFunc"
 		Cell			"RemoveResetFunc"
-		Cell			"TargetLibSuffix"
 		Cell			"ExtModeTransport"
-		Cell			"ExtModeMexFile"
 		Cell			"TargetPreCompLibLocation"
+		Cell			"TargetLibSuffix"
+		Cell			"ExtMode"
 		Cell			"ExtModeIntrfLevel"
 		PropName		"DisabledProps"
 	      }
@@ -1719,7 +1719,19 @@ Model {
 	Simulink.OptimizationCC {
 	  $ObjectID		  35
 	  Version		  "1.18.0"
-	  DisabledProps		  []
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    8
+	    Cell		    "BooleansAsBitfields"
+	    Cell		    "PassReuseOutputArgsAs"
+	    Cell		    "PassReuseOutputArgsThreshold"
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    Cell		    "UseSpecifiedMinMax"
+	    PropName		    "DisabledProps"
+	  }
 	  Description		  ""
 	  BlockReduction	  on
 	  BooleanDataType	  on
@@ -1774,7 +1786,12 @@ Model {
 	Simulink.DebuggingCC {
 	  $ObjectID		  36
 	  Version		  "1.18.0"
-	  DisabledProps		  []
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "UseOnlyExistingSharedCode"
+	    PropName		    "DisabledProps"
+	  }
 	  Description		  ""
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
@@ -1983,7 +2000,27 @@ Model {
 	  $BackupClass		  "Simulink.RTWCC"
 	  $ObjectID		  40
 	  Version		  "1.18.0"
-	  DisabledProps		  []
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    16
+	    Cell		    "IncludeHyperlinkInReport"
+	    Cell		    "GenerateTraceInfo"
+	    Cell		    "GenerateTraceReport"
+	    Cell		    "GenerateTraceReportSl"
+	    Cell		    "GenerateTraceReportSf"
+	    Cell		    "GenerateTraceReportEml"
+	    Cell		    "PortableWordSizes"
+	    Cell		    "GenerateWebview"
+	    Cell		    "GenerateCodeMetricsReport"
+	    Cell		    "GenerateCodeReplacementReport"
+	    Cell		    "GenerateMissedCodeReplacementReport"
+	    Cell		    "GenerateErtSFunction"
+	    Cell		    "CreateSILPILBlock"
+	    Cell		    "CodeExecutionProfiling"
+	    Cell		    "CodeProfilingSaveOptions"
+	    Cell		    "CodeProfilingInstrumentation"
+	    PropName		    "DisabledProps"
+	  }
 	  SystemTargetFile	  "sldrt.tlc"
 	  HardwareBoard		  "None"
 	  TLCOptions		  ""
@@ -2050,7 +2087,39 @@ Model {
 	    Simulink.CodeAppCC {
 	      $ObjectID		      41
 	      Version		      "1.18.0"
-	      DisabledProps	      []
+	      Array {
+		Type			"Cell"
+		Dimension		28
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"IgnoreTestpoints"
+		Cell			"BlockCommentType"
+		Cell			"InsertBlockDesc"
+		Cell			"InsertPolySpaceComments"
+		Cell			"SFDataObjDesc"
+		Cell			"MATLABFcnDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InternalIdentifier"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrModelFcn"
+		Cell			"CustomSymbolStrFcnArg"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		Cell			"CustomSymbolStrUtil"
+		Cell			"CustomSymbolStrEmxType"
+		Cell			"CustomSymbolStrEmxFcn"
+		Cell			"CustomUserTokenString"
+		Cell			"ReqsInCode"
+		PropName		"DisabledProps"
+	      }
 	      Description	      ""
 	      Comment		      ""
 	      ForceParamTrailComments off
@@ -2106,7 +2175,27 @@ Model {
 	      $BackupClass	      "Simulink.TargetCC"
 	      $ObjectID		      42
 	      Version		      "1.18.0"
-	      DisabledProps	      []
+	      Array {
+		Type			"Cell"
+		Dimension		16
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"ExistingSharedCode"
+		Cell			"GenerateTestInterfaces"
+		Cell			"ModelStepFunctionPrototypeControlCompliant"
+		Cell			"GenerateAllocFcn"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		Cell			"RemoveDisableFunc"
+		Cell			"RemoveResetFunc"
+		PropName		"DisabledProps"
+	      }
 	      Description	      ""
 	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
 	      TargetLibSuffix	      ""
@@ -2504,7 +2593,7 @@ Model {
       Position		      [510, 410, 540, 440]
       ZOrder		      -9
       BackgroundColor	      "yellow"
-      Value		      "3.5"
+      Value		      "4.25"
     }
     Block {
       BlockType		      Constant

@@ -7,9 +7,9 @@
  *
  * Code generation for model "TwoTankS11_Owen_v6".
  *
- * Model version              : 1.79
+ * Model version              : 1.80
  * Simulink Coder version : 8.14 (R2018a) 06-Feb-2018
- * C source code generated on : Mon Feb 11 17:23:36 2019
+ * C source code generated on : Mon Feb 11 17:59:10 2019
  *
  * Target selection: sldrt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -1005,7 +1005,7 @@ struct P_TwoTankS11_Owen_v6_T_ {
   real_T Desiredheightofbottomtank_Value;/* Expression: 0
                                           * Referenced by: '<Root>/Desired height of bottom tank'
                                           */
-  real_T Designvalveactuationvoltage_Value;/* Expression: 3.5
+  real_T Designvalveactuationvoltage_Value;/* Expression: 4.25
                                             * Referenced by: '<Root>/Design valve actuation voltage'
                                             */
   real_T Designheightofbottomtank_Value;/* Expression: 0
