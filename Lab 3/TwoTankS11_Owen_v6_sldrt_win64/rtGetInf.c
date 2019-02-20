@@ -7,9 +7,9 @@
  *
  * Code generation for model "TwoTankS11_Owen_v6".
  *
- * Model version              : 1.82
+ * Model version              : 1.90
  * Simulink Coder version : 8.14 (R2018a) 06-Feb-2018
- * C source code generated on : Tue Feb 19 15:44:18 2019
+ * C source code generated on : Tue Feb 19 17:32:31 2019
  *
  * Target selection: sldrt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping

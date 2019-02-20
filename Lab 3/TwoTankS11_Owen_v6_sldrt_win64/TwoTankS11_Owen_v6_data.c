@@ -7,9 +7,9 @@
  *
  * Code generation for model "TwoTankS11_Owen_v6".
  *
- * Model version              : 1.82
+ * Model version              : 1.90
  * Simulink Coder version : 8.14 (R2018a) 06-Feb-2018
- * C source code generated on : Tue Feb 19 15:44:18 2019
+ * C source code generated on : Tue Feb 19 17:32:31 2019
  *
  * Target selection: sldrt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -118,20 +118,20 @@ P_TwoTankS11_Owen_v6_T TwoTankS11_Owen_v6_P = {
    */
   4.0873,
 
-  /* Expression: 0
+  /* Expression: 7.5
    * Referenced by: '<Root>/Desired height of bottom tank'
    */
-  0.0,
+  7.5,
 
-  /* Expression: 3.5
+  /* Expression: 3.75
    * Referenced by: '<Root>/Design valve actuation voltage'
    */
-  3.5,
+  3.75,
 
-  /* Expression: 0
+  /* Expression: 7.5
    * Referenced by: '<Root>/Design height of bottom tank'
    */
-  0.0,
+  7.5,
 
   /* Expression: 0.6
    * Referenced by: '<Root>/KP'
@@ -148,15 +148,15 @@ P_TwoTankS11_Owen_v6_T TwoTankS11_Owen_v6_P = {
    */
   0.0,
 
-  /* Expression: 0
+  /* Expression: 0.0667*0.6
    * Referenced by: '<Root>/KD'
    */
-  0.0,
+  0.040019999999999993,
 
-  /* Expression: 0
+  /* Expression: 1
    * Referenced by: '<Root>/Man=0 Auto=1'
    */
-  0.0,
+  1.0,
 
   /* Expression: -6.1525
    * Referenced by: '<Root>/Valve bias (% opening)'

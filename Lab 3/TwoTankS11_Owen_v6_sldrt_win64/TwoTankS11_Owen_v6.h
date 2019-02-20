@@ -7,9 +7,9 @@
  *
  * Code generation for model "TwoTankS11_Owen_v6".
  *
- * Model version              : 1.82
+ * Model version              : 1.90
  * Simulink Coder version : 8.14 (R2018a) 06-Feb-2018
- * C source code generated on : Tue Feb 19 15:44:18 2019
+ * C source code generated on : Tue Feb 19 17:32:31 2019
  *
  * Target selection: sldrt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -1002,13 +1002,13 @@ struct P_TwoTankS11_Owen_v6_T_ {
   real_T Toptankbiasinches_Value;      /* Expression: 4.0873
                                         * Referenced by: '<Root>/Top tank bias (inches)'
                                         */
-  real_T Desiredheightofbottomtank_Value;/* Expression: 0
+  real_T Desiredheightofbottomtank_Value;/* Expression: 7.5
                                           * Referenced by: '<Root>/Desired height of bottom tank'
                                           */
-  real_T Designvalveactuationvoltage_Value;/* Expression: 3.5
+  real_T Designvalveactuationvoltage_Value;/* Expression: 3.75
                                             * Referenced by: '<Root>/Design valve actuation voltage'
                                             */
-  real_T Designheightofbottomtank_Value;/* Expression: 0
+  real_T Designheightofbottomtank_Value;/* Expression: 7.5
                                          * Referenced by: '<Root>/Design height of bottom tank'
                                          */
   real_T KP_Gain;                      /* Expression: 0.6
@@ -1020,10 +1020,10 @@ struct P_TwoTankS11_Owen_v6_T_ {
   real_T KI_Gain;                      /* Expression: 0
                                         * Referenced by: '<Root>/KI'
                                         */
-  real_T KD_Gain;                      /* Expression: 0
+  real_T KD_Gain;                      /* Expression: 0.0667*0.6
                                         * Referenced by: '<Root>/KD'
                                         */
-  real_T Man0Auto1_Gain;               /* Expression: 0
+  real_T Man0Auto1_Gain;               /* Expression: 1
                                         * Referenced by: '<Root>/Man=0 Auto=1'
                                         */
   real_T Valvebiasopening_Value;       /* Expression: -6.1525
