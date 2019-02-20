@@ -23,6 +23,9 @@ close all;
 % figure;
 % load('Two Tank/StepResponse3.mat');
 % plot(TwoTank(:, 1), TwoTank(:, 2), TwoTank(:, 1), TwoTank(:, 3), 'LineWidth', 2);
+figure;
+load('Two Tank/Disturbance.mat');
+plot(TwoTank(:, 1), TwoTank(:, 2), TwoTank(:, 1), TwoTank(:, 3), 'LineWidth', 2);
 % 
 % figure;
 % load('Two Tank/StepResponse1.mat');
@@ -36,6 +39,10 @@ close all;
 % load('Two Tank/StepResponse3.mat');
 % plot(smooth(TwoTank(:, 1), 10), smooth(TwoTank(:, 2), 10), ...
 %      smooth(TwoTank(:, 1), 10), smooth(TwoTank(:, 3), 10), 'LineWidth', 2);
+figure;
+load('Two Tank/Disturbance.mat');
+plot(smooth(TwoTank(:, 1), 10), smooth(TwoTank(:, 2), 10), ...
+     smooth(TwoTank(:, 1), 10), smooth(TwoTank(:, 3), 10), 'LineWidth', 2);
 
 
 
@@ -71,3 +78,17 @@ xlabel({'Time (s)'
 ylabel('Height (in)');
 legend('Experimental', 'Simulated', 'Location', 'northwest');
 xlim([0, 600]);
+
+
+
+%% Closed-Loop Proportional Controller
+
+figure;
+sim('Lab3ASimulinkClosedLoop')
+plot(tout, simout, 'LineWidth', 2);
+title('Closed-Loop Proportional Controller Simulation');
+xlabel({'Time (s)'
+        ''
+        % Figure label
+        '\bfFigure 3: \rmClosed-Loop Proportional Controller Simulation'});
+ylabel('Height (in)');

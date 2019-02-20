@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.81"
+    ComputedModelVersion    "1.87"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -90,8 +90,8 @@ Model {
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
 	Extents			[1242.0, 819.0]
-	ZoomFactor		[0.8]
-	Offset			[-178.55476190476065, -89.680952380953158]
+	ZoomFactor		[1.25]
+	Offset			[-5.3261904761886285, 125.67619047618945]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -125,9 +125,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "melab2"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Feb 11 18:07:09 2019"
-  RTWModifiedTimeStamp	  471809222
-  ModelVersionFormat	  "1.%<AutoIncrement:81>"
+  LastModifiedDate	  "Tue Feb 19 16:54:41 2019"
+  RTWModifiedTimeStamp	  472496057
+  ModelVersionFormat	  "1.%<AutoIncrement:87>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "none"
@@ -784,7 +784,7 @@ Model {
 		Type			"Cell"
 		Dimension		21
 		Cell			"IncludeMdlTerminateFcn"
-		Cell			"ExtModeMexFile"
+		Cell			"ExtMode"
 		Cell			"SuppressErrorStatus"
 		Cell			"ERTCustomFileBanners"
 		Cell			"GenerateSampleERTMain"
@@ -799,10 +799,10 @@ Model {
 		Cell			"SupportNonInlinedSFcns"
 		Cell			"RemoveDisableFunc"
 		Cell			"RemoveResetFunc"
-		Cell			"ExtModeTransport"
-		Cell			"TargetPreCompLibLocation"
 		Cell			"TargetLibSuffix"
-		Cell			"ExtMode"
+		Cell			"ExtModeTransport"
+		Cell			"ExtModeMexFile"
+		Cell			"TargetPreCompLibLocation"
 		Cell			"ExtModeIntrfLevel"
 		PropName		"DisabledProps"
 	      }
@@ -2532,7 +2532,7 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "80"
+    ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "95"
     Block {
@@ -2584,7 +2584,7 @@ Model {
       Position		      [90, 645, 120, 675]
       ZOrder		      -8
       BackgroundColor	      "yellow"
-      Value		      "0"
+      Value		      "7.5"
     }
     Block {
       BlockType		      Constant
@@ -2593,7 +2593,7 @@ Model {
       Position		      [510, 410, 540, 440]
       ZOrder		      -9
       BackgroundColor	      "yellow"
-      Value		      "4.25"
+      Value		      "3.75"
     }
     Block {
       BlockType		      Constant
@@ -2602,7 +2602,7 @@ Model {
       Position		      [75, 460, 105, 490]
       ZOrder		      -10
       BackgroundColor	      "yellow"
-      Value		      "0"
+      Value		      "7.5"
     }
     Block {
       BlockType		      From
@@ -2727,7 +2727,6 @@ Model {
       Position		      [515, 525, 545, 555]
       ZOrder		      -21
       BackgroundColor	      "yellow"
-      Gain		      "0"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
