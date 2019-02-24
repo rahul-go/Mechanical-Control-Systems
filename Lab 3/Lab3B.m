@@ -14,32 +14,6 @@ close all;
 
 %% Data
 
-% P-only Controller
-figure;
-hold on;
-load('Two Tank/POnlyController');
-sim('Lab3BSimulinkPID')
-plot(TwoTank(:, 1), TwoTank(:, 2), TwoTank(:, 1), TwoTank(:, 3), 'LineWidth', 2);
-plot(tout, simout);
-legend('Top Tank', 'Bottom Tank');
-xlim([0, 600]);
-
-% PI Controller
-figure;
-load('Two Tank/PIController');
-plot(TwoTank(:, 1), TwoTank(:, 2), TwoTank(:, 1), TwoTank(:, 3), 'LineWidth', 2);
-legend('Top Tank', 'Bottom Tank');
-xlim([0, 600]);
-
-% PD Controller
-figure;
-load('Two Tank/PDController');
-plot(TwoTank(:, 1), TwoTank(:, 2), TwoTank(:, 1), TwoTank(:, 3), 'LineWidth', 2);
-legend('Top Tank', 'Bottom Tank');
-xlim([0, 600]);
-
-%%
-
 % P-Only Controller
 load('Two Tank/POnlyController');
 sim('Lab3BSimulinkPOnly')
