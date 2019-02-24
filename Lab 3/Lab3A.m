@@ -15,32 +15,32 @@ close all;
 %% Data
 
 % figure;
-% load('Two Tank/StepResponse1.mat');
+% load('Two Tank/StepResponse1');
 % plot(TwoTank(:, 1), TwoTank(:, 2), TwoTank(:, 1), TwoTank(:, 3), 'LineWidth', 2);
 % figure;
-% load('Two Tank/StepResponse2.mat');
+% load('Two Tank/StepResponse2');
 % plot(TwoTank(:, 1), TwoTank(:, 2), TwoTank(:, 1), TwoTank(:, 3), 'LineWidth', 2);
 % figure;
-% load('Two Tank/StepResponse3.mat');
+% load('Two Tank/StepResponse3');
 % plot(TwoTank(:, 1), TwoTank(:, 2), TwoTank(:, 1), TwoTank(:, 3), 'LineWidth', 2);
 figure;
-load('Two Tank/Disturbance.mat');
+load('Two Tank/Disturbance');
 plot(TwoTank(:, 1), TwoTank(:, 2), TwoTank(:, 1), TwoTank(:, 3), 'LineWidth', 2);
 % 
 % figure;
-% load('Two Tank/StepResponse1.mat');
+% load('Two Tank/StepResponse1');
 % plot(smooth(TwoTank(:, 1), 10), smooth(TwoTank(:, 2), 10), ...
 %      smooth(TwoTank(:, 1), 10), smooth(TwoTank(:, 3), 10), 'LineWidth', 2);
 % figure;
-% load('Two Tank/StepResponse2.mat');
+% load('Two Tank/StepResponse2');
 % plot(smooth(TwoTank(:, 1), 10), smooth(TwoTank(:, 2), 10), ...
 %      smooth(TwoTank(:, 1), 10), smooth(TwoTank(:, 3), 10), 'LineWidth', 2);
 % figure;
-% load('Two Tank/StepResponse3.mat');
+% load('Two Tank/StepResponse3');
 % plot(smooth(TwoTank(:, 1), 10), smooth(TwoTank(:, 2), 10), ...
 %      smooth(TwoTank(:, 1), 10), smooth(TwoTank(:, 3), 10), 'LineWidth', 2);
 figure;
-load('Two Tank/Disturbance.mat');
+load('Two Tank/Disturbance');
 plot(smooth(TwoTank(:, 1), 10), smooth(TwoTank(:, 2), 10), ...
      smooth(TwoTank(:, 1), 10), smooth(TwoTank(:, 3), 10), 'LineWidth', 2);
 
@@ -48,7 +48,7 @@ plot(smooth(TwoTank(:, 1), 10), smooth(TwoTank(:, 2), 10), ...
 
 %% Experimental and Simulated Data
 
-% load('Two Tank/StepResponse2.mat');
+% load('Two Tank/StepResponse2');
 % sim('Lab3ASimulinkOpenLoop')
 % 
 % % Top Tank
