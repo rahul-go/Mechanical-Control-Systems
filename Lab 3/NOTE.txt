@@ -1,0 +1,1 @@
+Simulink disturbance values are set to 1 instead of 0.866.
