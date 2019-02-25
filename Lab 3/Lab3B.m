@@ -12,7 +12,7 @@ close all;
 
 
 
-%% Data
+%% Experimental and Simulated Data
 
 % P-Only Controller
 load('Two Tank/POnlyController');
@@ -22,28 +22,28 @@ sim('Lab3BSimulinkPOnly')
 figure;
 hold on;
 plot(TwoTank(:, 1), TwoTank(:, 2), 'LineWidth', 2);
-plot(tout, simout, 'LineWidth', 4);
+plot(tout, simout, 'LineWidth', 3);
 title('Top Tank Height, Experimental and Simulated Data, P-Only Controller');
 xlabel({'Time (s)'
         ''
         % Figure label
         '\bfFigure 1: \rmTop Tank Height, Experimental and Simulated Data, P-Only Controller'});
 ylabel('Height (in)');
-legend('Experimental', 'Simulated', 'Location', 'northwest');
+legend('Experimental', 'Simulated', 'Location', 'southeast');
 xlim([0, 600]);
 
 % Bottom Tank
 figure;
 hold on;
 plot(TwoTank(:, 1), TwoTank(:, 3), 'LineWidth', 2);
-plot(tout, simout1, 'LineWidth', 4);
+plot(tout, simout1, 'LineWidth', 3);
 title('Bottom Tank Height, Experimental and Simulated Data, P-Only Controller');
 xlabel({'Time (s)'
         ''
         % Figure label
         '\bfFigure 2: \rmBottom Tank Height, Experimental and Simulated Data, P-Only Controller'});
 ylabel('Height (in)');
-legend('Experimental', 'Simulated', 'Location', 'northwest');
+legend('Experimental', 'Simulated', 'Location', 'southeast');
 xlim([0, 600]);
 
 
@@ -56,28 +56,28 @@ sim('Lab3BSimulinkPI')
 figure;
 hold on;
 plot(TwoTank(:, 1), TwoTank(:, 2), 'LineWidth', 2);
-plot(tout, simout, 'LineWidth', 4);
+plot(tout, simout, 'LineWidth', 3);
 title('Top Tank Height, Experimental and Simulated Data, PI Controller');
 xlabel({'Time (s)'
         ''
         % Figure label
         '\bfFigure 3: \rmTop Tank Height, Experimental and Simulated Data, PI Controller'});
 ylabel('Height (in)');
-legend('Experimental', 'Simulated', 'Location', 'northwest');
+legend('Experimental', 'Simulated', 'Location', 'southeast');
 xlim([0, 600]);
 
 % Bottom Tank
 figure;
 hold on;
 plot(TwoTank(:, 1), TwoTank(:, 3), 'LineWidth', 2);
-plot(tout, simout1, 'LineWidth', 4);
+plot(tout, simout1, 'LineWidth', 3);
 title('Bottom Tank Height, Experimental and Simulated Data, PI Controller');
 xlabel({'Time (s)'
         ''
         % Figure label
         '\bfFigure 4: \rmBottom Tank Height, Experimental and Simulated Data, PI Controller'});
 ylabel('Height (in)');
-legend('Experimental', 'Simulated', 'Location', 'northwest');
+legend('Experimental', 'Simulated', 'Location', 'southeast');
 xlim([0, 600]);
 
 
@@ -90,26 +90,30 @@ sim('Lab3BSimulinkPD')
 figure;
 hold on;
 plot(TwoTank(:, 1), TwoTank(:, 2), 'LineWidth', 2);
-plot(tout, simout, 'LineWidth', 4);
+plot(tout, simout, 'LineWidth', 3);
 title('Top Tank Height, Experimental and Simulated Data, PD Controller');
 xlabel({'Time (s)'
         ''
         % Figure label
         '\bfFigure 5: \rmTop Tank Height, Experimental and Simulated Data, PD Controller'});
 ylabel('Height (in)');
-legend('Experimental', 'Simulated', 'Location', 'northwest');
+legend('Experimental', 'Simulated', 'Location', 'southeast');
 xlim([0, 600]);
 
 % Bottom Tank
 figure;
 hold on;
 plot(TwoTank(:, 1), TwoTank(:, 3), 'LineWidth', 2);
-plot(tout, simout1, 'LineWidth', 4);
+plot(tout, simout1, 'LineWidth', 3);
 title('Bottom Tank Height, Experimental and Simulated Data, PD Controller');
 xlabel({'Time (s)'
         ''
         % Figure label
         '\bfFigure 6: \rmBottom Tank Height, Experimental and Simulated Data, PD Controller'});
 ylabel('Height (in)');
-legend('Experimental', 'Simulated', 'Location', 'northwest');
+legend('Experimental', 'Simulated', 'Location', 'southeast');
 xlim([0, 600]);
+
+
+
+%% Root Locus Plots

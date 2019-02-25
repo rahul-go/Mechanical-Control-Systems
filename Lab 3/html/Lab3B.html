@@ -1,0 +1,295 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Lab3B</title><meta name="generator" content="MATLAB 9.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2019-02-24"><meta name="DC.source" content="Lab3B.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#1">ME 422 Lab 3A</a></li><li><a href="#2">Experimental and Simulated Data</a></li><li><a href="#3">Root Locus Plots</a></li></ul></div><h2 id="1">ME 422 Lab 3A</h2><p>Tristan Faulkner</p><p>Rahul Goyal</p><p>February 25, 2019</p><pre class="codeinput"><span class="comment">% Reset</span>
+clc;
+clear <span class="string">all</span>;
+close <span class="string">all</span>;
+</pre><h2 id="2">Experimental and Simulated Data</h2><pre class="codeinput"><span class="comment">% P-Only Controller</span>
+load(<span class="string">'Two Tank/POnlyController'</span>);
+sim(<span class="string">'Lab3BSimulinkPOnly'</span>)
+
+<span class="comment">% Top Tank</span>
+figure;
+hold <span class="string">on</span>;
+plot(TwoTank(:, 1), TwoTank(:, 2), <span class="string">'LineWidth'</span>, 2);
+plot(tout, simout, <span class="string">'LineWidth'</span>, 3);
+title(<span class="string">'Top Tank Height, Experimental and Simulated Data, P-Only Controller'</span>);
+xlabel({<span class="string">'Time (s)'</span>
+        <span class="string">''</span>
+        <span class="comment">% Figure label</span>
+        <span class="string">'\bfFigure 1: \rmTop Tank Height, Experimental and Simulated Data, P-Only Controller'</span>});
+ylabel(<span class="string">'Height (in)'</span>);
+legend(<span class="string">'Experimental'</span>, <span class="string">'Simulated'</span>, <span class="string">'Location'</span>, <span class="string">'southeast'</span>);
+xlim([0, 600]);
+
+<span class="comment">% Bottom Tank</span>
+figure;
+hold <span class="string">on</span>;
+plot(TwoTank(:, 1), TwoTank(:, 3), <span class="string">'LineWidth'</span>, 2);
+plot(tout, simout1, <span class="string">'LineWidth'</span>, 3);
+title(<span class="string">'Bottom Tank Height, Experimental and Simulated Data, P-Only Controller'</span>);
+xlabel({<span class="string">'Time (s)'</span>
+        <span class="string">''</span>
+        <span class="comment">% Figure label</span>
+        <span class="string">'\bfFigure 2: \rmBottom Tank Height, Experimental and Simulated Data, P-Only Controller'</span>});
+ylabel(<span class="string">'Height (in)'</span>);
+legend(<span class="string">'Experimental'</span>, <span class="string">'Simulated'</span>, <span class="string">'Location'</span>, <span class="string">'southeast'</span>);
+xlim([0, 600]);
+
+
+
+<span class="comment">% PI Controller</span>
+load(<span class="string">'Two Tank/PIController'</span>);
+sim(<span class="string">'Lab3BSimulinkPI'</span>)
+
+<span class="comment">% Top Tank</span>
+figure;
+hold <span class="string">on</span>;
+plot(TwoTank(:, 1), TwoTank(:, 2), <span class="string">'LineWidth'</span>, 2);
+plot(tout, simout, <span class="string">'LineWidth'</span>, 3);
+title(<span class="string">'Top Tank Height, Experimental and Simulated Data, PI Controller'</span>);
+xlabel({<span class="string">'Time (s)'</span>
+        <span class="string">''</span>
+        <span class="comment">% Figure label</span>
+        <span class="string">'\bfFigure 3: \rmTop Tank Height, Experimental and Simulated Data, PI Controller'</span>});
+ylabel(<span class="string">'Height (in)'</span>);
+legend(<span class="string">'Experimental'</span>, <span class="string">'Simulated'</span>, <span class="string">'Location'</span>, <span class="string">'southeast'</span>);
+xlim([0, 600]);
+
+<span class="comment">% Bottom Tank</span>
+figure;
+hold <span class="string">on</span>;
+plot(TwoTank(:, 1), TwoTank(:, 3), <span class="string">'LineWidth'</span>, 2);
+plot(tout, simout1, <span class="string">'LineWidth'</span>, 3);
+title(<span class="string">'Bottom Tank Height, Experimental and Simulated Data, PI Controller'</span>);
+xlabel({<span class="string">'Time (s)'</span>
+        <span class="string">''</span>
+        <span class="comment">% Figure label</span>
+        <span class="string">'\bfFigure 4: \rmBottom Tank Height, Experimental and Simulated Data, PI Controller'</span>});
+ylabel(<span class="string">'Height (in)'</span>);
+legend(<span class="string">'Experimental'</span>, <span class="string">'Simulated'</span>, <span class="string">'Location'</span>, <span class="string">'southeast'</span>);
+xlim([0, 600]);
+
+
+
+<span class="comment">% PD Controller</span>
+load(<span class="string">'Two Tank/PDController'</span>);
+sim(<span class="string">'Lab3BSimulinkPD'</span>)
+
+<span class="comment">% Top Tank</span>
+figure;
+hold <span class="string">on</span>;
+plot(TwoTank(:, 1), TwoTank(:, 2), <span class="string">'LineWidth'</span>, 2);
+plot(tout, simout, <span class="string">'LineWidth'</span>, 3);
+title(<span class="string">'Top Tank Height, Experimental and Simulated Data, PD Controller'</span>);
+xlabel({<span class="string">'Time (s)'</span>
+        <span class="string">''</span>
+        <span class="comment">% Figure label</span>
+        <span class="string">'\bfFigure 5: \rmTop Tank Height, Experimental and Simulated Data, PD Controller'</span>});
+ylabel(<span class="string">'Height (in)'</span>);
+legend(<span class="string">'Experimental'</span>, <span class="string">'Simulated'</span>, <span class="string">'Location'</span>, <span class="string">'southeast'</span>);
+xlim([0, 600]);
+
+<span class="comment">% Bottom Tank</span>
+figure;
+hold <span class="string">on</span>;
+plot(TwoTank(:, 1), TwoTank(:, 3), <span class="string">'LineWidth'</span>, 2);
+plot(tout, simout1, <span class="string">'LineWidth'</span>, 3);
+title(<span class="string">'Bottom Tank Height, Experimental and Simulated Data, PD Controller'</span>);
+xlabel({<span class="string">'Time (s)'</span>
+        <span class="string">''</span>
+        <span class="comment">% Figure label</span>
+        <span class="string">'\bfFigure 6: \rmBottom Tank Height, Experimental and Simulated Data, PD Controller'</span>});
+ylabel(<span class="string">'Height (in)'</span>);
+legend(<span class="string">'Experimental'</span>, <span class="string">'Simulated'</span>, <span class="string">'Location'</span>, <span class="string">'southeast'</span>);
+xlim([0, 600]);
+</pre><h2 id="3">Root Locus Plots</h2><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2018a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% ME 422 Lab 3A
+% Tristan Faulkner
+%
+% Rahul Goyal
+%
+% February 25, 2019
+
+% Reset
+clc;
+clear all;
+close all;
+
+
+
+%% Experimental and Simulated Data
+
+% P-Only Controller
+load('Two Tank/POnlyController');
+sim('Lab3BSimulinkPOnly')
+
+% Top Tank
+figure;
+hold on;
+plot(TwoTank(:, 1), TwoTank(:, 2), 'LineWidth', 2);
+plot(tout, simout, 'LineWidth', 3);
+title('Top Tank Height, Experimental and Simulated Data, P-Only Controller');
+xlabel({'Time (s)'
+        ''
+        % Figure label
+        '\bfFigure 1: \rmTop Tank Height, Experimental and Simulated Data, P-Only Controller'});
+ylabel('Height (in)');
+legend('Experimental', 'Simulated', 'Location', 'southeast');
+xlim([0, 600]);
+
+% Bottom Tank
+figure;
+hold on;
+plot(TwoTank(:, 1), TwoTank(:, 3), 'LineWidth', 2);
+plot(tout, simout1, 'LineWidth', 3);
+title('Bottom Tank Height, Experimental and Simulated Data, P-Only Controller');
+xlabel({'Time (s)'
+        ''
+        % Figure label
+        '\bfFigure 2: \rmBottom Tank Height, Experimental and Simulated Data, P-Only Controller'});
+ylabel('Height (in)');
+legend('Experimental', 'Simulated', 'Location', 'southeast');
+xlim([0, 600]);
+
+
+
+% PI Controller
+load('Two Tank/PIController');
+sim('Lab3BSimulinkPI')
+
+% Top Tank
+figure;
+hold on;
+plot(TwoTank(:, 1), TwoTank(:, 2), 'LineWidth', 2);
+plot(tout, simout, 'LineWidth', 3);
+title('Top Tank Height, Experimental and Simulated Data, PI Controller');
+xlabel({'Time (s)'
+        ''
+        % Figure label
+        '\bfFigure 3: \rmTop Tank Height, Experimental and Simulated Data, PI Controller'});
+ylabel('Height (in)');
+legend('Experimental', 'Simulated', 'Location', 'southeast');
+xlim([0, 600]);
+
+% Bottom Tank
+figure;
+hold on;
+plot(TwoTank(:, 1), TwoTank(:, 3), 'LineWidth', 2);
+plot(tout, simout1, 'LineWidth', 3);
+title('Bottom Tank Height, Experimental and Simulated Data, PI Controller');
+xlabel({'Time (s)'
+        ''
+        % Figure label
+        '\bfFigure 4: \rmBottom Tank Height, Experimental and Simulated Data, PI Controller'});
+ylabel('Height (in)');
+legend('Experimental', 'Simulated', 'Location', 'southeast');
+xlim([0, 600]);
+
+
+
+% PD Controller
+load('Two Tank/PDController');
+sim('Lab3BSimulinkPD')
+
+% Top Tank
+figure;
+hold on;
+plot(TwoTank(:, 1), TwoTank(:, 2), 'LineWidth', 2);
+plot(tout, simout, 'LineWidth', 3);
+title('Top Tank Height, Experimental and Simulated Data, PD Controller');
+xlabel({'Time (s)'
+        ''
+        % Figure label
+        '\bfFigure 5: \rmTop Tank Height, Experimental and Simulated Data, PD Controller'});
+ylabel('Height (in)');
+legend('Experimental', 'Simulated', 'Location', 'southeast');
+xlim([0, 600]);
+
+% Bottom Tank
+figure;
+hold on;
+plot(TwoTank(:, 1), TwoTank(:, 3), 'LineWidth', 2);
+plot(tout, simout1, 'LineWidth', 3);
+title('Bottom Tank Height, Experimental and Simulated Data, PD Controller');
+xlabel({'Time (s)'
+        ''
+        % Figure label
+        '\bfFigure 6: \rmBottom Tank Height, Experimental and Simulated Data, PD Controller'});
+ylabel('Height (in)');
+legend('Experimental', 'Simulated', 'Location', 'southeast');
+xlim([0, 600]);
+
+
+
+%% Root Locus Plots
+
+##### SOURCE END #####
+--></body></html>
