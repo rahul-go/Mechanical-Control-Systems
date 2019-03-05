@@ -164,7 +164,7 @@ REQ_INCLUDES := $(MATLAB_ROOT)/simulink/include;$(MATLAB_ROOT)/extern/include;$(
 REQ_INCLUDES += ;$(MATLAB_ROOT)/toolbox/shared/can/src/scanutil;$(SLDRTDIR)/src
 
 # additional includes
-REQ_INCLUDES += ;C:/Users/melab2/Desktop/MECHAN~1/LAB4~1;C:/Users/melab2/Desktop/MECHAN~1/LAB4~1/PIDPositionerF141_sldrt_win64;$(MATLAB_ROOT)/rtw/c/src/ext_mode/common
+REQ_INCLUDES += ;C:/Users/melab2/DOCUME~1/GitHub/MECHAN~1/LAB4~1;C:/Users/melab2/DOCUME~1/GitHub/MECHAN~1/LAB4~1/PIDPositionerF141_sldrt_win64;C:/Users/melab2/DOCUME~1/GitHub/MECHAN~1/LAB4~1/HydraulicPositioner;$(MATLAB_ROOT)/rtw/c/src/ext_mode/common
 
 # shared includes
 ifneq ($(SHARED_SRC_DIR),)
