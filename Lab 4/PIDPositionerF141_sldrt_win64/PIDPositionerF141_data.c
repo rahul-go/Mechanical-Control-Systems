@@ -7,9 +7,9 @@
  *
  * Code generation for model "PIDPositionerF141".
  *
- * Model version              : 1.65
+ * Model version              : 1.66
  * Simulink Coder version : 8.14 (R2018a) 06-Feb-2018
- * C source code generated on : Mon Feb 25 16:40:29 2019
+ * C source code generated on : Mon Mar  4 16:35:10 2019
  *
  * Target selection: sldrt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -26,7 +26,7 @@ P_PIDPositionerF141_T PIDPositionerF141_P = {
   /* Mask Parameter: PIDController_D
    * Referenced by: '<S1>/Derivative Gain'
    */
-  0.0,
+  0.15,
 
   /* Mask Parameter: AnalogOutput_FinalValue
    * Referenced by: '<Root>/Analog Output'
@@ -36,7 +36,7 @@ P_PIDPositionerF141_T PIDPositionerF141_P = {
   /* Mask Parameter: PIDController_I
    * Referenced by: '<S1>/Integral Gain'
    */
-  0.0,
+  12.0,
 
   /* Mask Parameter: AnalogOutput_InitialValue
    * Referenced by: '<Root>/Analog Output'
@@ -61,7 +61,7 @@ P_PIDPositionerF141_T PIDPositionerF141_P = {
   /* Mask Parameter: PIDController_P
    * Referenced by: '<S1>/Proportional Gain'
    */
-  82.0,
+  47.5,
 
   /* Mask Parameter: AnalogInput_YieldWhenWaiting
    * Referenced by: '<Root>/Analog Input'
